@@ -7,6 +7,7 @@ function Form() {
   const [petAge, setPetAge] = useState("");
   const [petFunFact, setPetFunFact] = useState("");
   const [petOwnersName, setPetOwnersName] = useState("");
+  const [petType, setPetType] = useState("")
 
   function submitNewPets() {
     const newPet = {
@@ -16,6 +17,9 @@ function Form() {
       petAge,
       petFunFact,
       petOwnersName,
+    }
+    if (!newPet.petName || !newPet.petNickname || !newPet.petAge || !newPet.petFunFact || !newPet.petOwnersName) {
+      return alert('Fill all inputs!')
     }
     clearInputs()
   }
@@ -41,6 +45,8 @@ function Form() {
 
       <input 
         type='checkbox'
+        checked={petType === 'dog'}
+        onChange={() => setPetType('dog')}
         id='dog'
         name='dog'
       />
@@ -48,6 +54,8 @@ function Form() {
 
       <input 
         type='checkbox'
+        checked={petType === 'cat'}
+        onChange={() => setPetType('cat')}
         id='cat'
         name='cat'
       />
