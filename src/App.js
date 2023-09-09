@@ -1,5 +1,5 @@
 import './App.css';
-import HomeView from './HomeView';
+import HomeView from './components/HomeView/HomeView';
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
