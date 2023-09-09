@@ -8,6 +8,17 @@ function Form() {
   const [petFunFact, setPetFunFact] = useState("");
   const [petOwnersName, setPetOwnersName] = useState("");
 
+  function submitNewPets() {
+    const newPet = {
+      id: Date.now(),
+      petName,
+      petNickname,
+      petAge,
+      petFunFact,
+      petOwnersName,
+    }
+  }
+
   return (
     <form>
       <label for='pets-name'>Pets Name:</label>
