@@ -50,6 +50,15 @@ function Form() {
         value={petAge}
         onChange={event => setPetAge(event.target.value)}
       />
+
+      <label for='pets-fun-fact'>Pets Fun Fact:</label>
+      <input 
+        type='text'
+        id='pets-fun-fact'
+        name='petsFunFact'
+        value={petFunFact}
+        onChange={event => setPetFunFact(event.target.value)}
+      />
     </form>
   )
 }
