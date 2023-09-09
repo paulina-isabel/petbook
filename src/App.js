@@ -1,6 +1,6 @@
 import './App.css';
-import Form from './Components/Forms/Form';
-import Header from './Components/Header/Header';
+import Form from './components/Forms/Form';
+import Header from './components/Header/Header';
 
 
 
