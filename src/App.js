@@ -1,13 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
-import Form from './components/Forms/Form';
+import Form from './Components/Forms/Form';
+import Header from './Components/Header/Header';
+
 
 
 function App() {
   return (
     <div className="App">
-Hi
-<Form />
+      <Header />
+      <Form />
     </div>
   );
 }
