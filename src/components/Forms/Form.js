@@ -19,7 +19,19 @@ function Form() {
         onChange={event => setPetName(event.target.value)}
       />
 
-      
+      <input 
+        type='checkbox'
+        id='dog'
+        name='dog'
+      />
+      <label for='dog'>Dog</label>  
+
+      <input 
+        type='checkbox'
+        id='cat'
+        name='cat'
+      />
+      <label for='cat'>Cat</label>
     </form>
   )
 }
