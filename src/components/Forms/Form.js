@@ -68,6 +68,7 @@ function Form() {
         value={petOwnersName}
         onChange={event => setPetOwnersName(event.target.value)}
       />    
+    <button onClick={event => submitNewPets(event)}>Submit</button>  
     </form>
   )
 }
