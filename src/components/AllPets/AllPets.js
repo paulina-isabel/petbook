@@ -4,7 +4,7 @@ const AllPets = () => {
 
   const pets = [
     {
-      name: "Pluton",
+      name: "Pluto",
       age: 6,
       owner: "Paulina"
     },
@@ -16,12 +16,15 @@ const AllPets = () => {
   ]
 
   const allPets = pets.map((pet) => {
-    return <PetCard />
+    return <PetCard 
+      name={pet.name}
+      age={pet.age}
+      owner={pet.owner}
+      />
   })
 
   return (
-    <div>
-      This is AllPets
+    <div className="all-pets-container">
       {allPets}
     </div>
   )

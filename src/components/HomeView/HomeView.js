@@ -2,8 +2,7 @@ import AllPets from "../AllPets/AllPets"
 
 const HomeView = () => {
   return (
-    <div>
-      This is HomeView
+    <div className="home-view">
       <AllPets />
     </div>
   )
