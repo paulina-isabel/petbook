@@ -17,6 +17,15 @@ function Form() {
       petFunFact,
       petOwnersName,
     }
+    clearInputs()
+  }
+
+  function clearInputs() {
+    setPetName("");
+    setPetNickname("");
+    setPetAge("");
+    setPetFunFact("");
+    setPetOwnersName("");
   }
 
   return (
