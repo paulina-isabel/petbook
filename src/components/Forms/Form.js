@@ -8,7 +8,20 @@ function Form() {
   const [petFunFact, setPetFunFact] = useState("");
   const [petOwnersName, setPetOwnersName] = useState("");
 
+  return (
+    <form>
+      <label for='pets-name'>Pets Name:</label>
+        <input 
+        type='text'
+        id='pets-name'
+        name='petsName'
+        value={petName}
+        onChange={event => setPetName(event.target.value)}
+      />
 
+      
+    </form>
+  )
 }
 
 export default Form;
