@@ -7,6 +7,7 @@ function Form() {
   const [petAge, setPetAge] = useState("");
   const [petFunFact, setPetFunFact] = useState("");
   const [petOwnersName, setPetOwnersName] = useState("");
+  const [petType, setPetType] = useState("")
 
   function submitNewPets() {
     const newPet = {
@@ -16,6 +17,9 @@ function Form() {
       petAge,
       petFunFact,
       petOwnersName,
+    }
+    if (!newPet.petName || !newPet.petNickname || !newPet.petAge || !newPet.petFunFact || !newPet.petOwnersName) {
+      return alert('Fill all inputs!')
     }
     clearInputs()
   }
@@ -30,7 +34,7 @@ function Form() {
 
   return (
     <form>
-      <label for='pets-name'>Pets Name:</label>
+      <label htmlFor='pets-name'>Pets Name:</label>
         <input 
         type='text'
         id='pets-name'
@@ -41,19 +45,23 @@ function Form() {
 
       <input 
         type='checkbox'
+        checked={petType === 'dog'}
+        onChange={() => setPetType('dog')}
         id='dog'
         name='dog'
       />
-      <label for='dog'>Dog</label>  
+      <label htmlFor='dog'>Dog</label>  
 
       <input 
         type='checkbox'
+        checked={petType === 'cat'}
+        onChange={() => setPetType('cat')}
         id='cat'
         name='cat'
       />
-      <label for='cat'>Cat</label>
+      <label htmlFor='cat'>Cat</label>
 
-      <label for='pets-nickname'>Pets Nickname:</label>
+      <label htmlFor='pets-nickname'>Pets Nickname:</label>
       <input 
         type='text'
         id='pets-nickname'
@@ -62,7 +70,7 @@ function Form() {
         onChange={event => setPetNickname(event.target.value)}
       />
 
-      <label for='pets-age'>Pets Age:</label>
+      <label htmlFor='pets-age'>Pets Age:</label>
       <input 
         type='text'
         id='pets-age'
@@ -71,7 +79,7 @@ function Form() {
         onChange={event => setPetAge(event.target.value)}
       />
 
-      <label for='pets-fun-fact'>Pets Fun Fact:</label>
+      <label htmlFor='pets-fun-fact'>Pets Fun Fact:</label>
       <input 
         type='text'
         id='pets-fun-fact'
@@ -80,7 +88,7 @@ function Form() {
         onChange={event => setPetFunFact(event.target.value)}
       />
 
-      <label for='pet-owners-name'>Pet Owners Name:</label>
+      <label htmlFor='pet-owners-name'>Pet Owners Name:</label>
       <input 
         type='text'
         id='pet-owners-name'
