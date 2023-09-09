@@ -32,6 +32,15 @@ function Form() {
         name='cat'
       />
       <label for='cat'>Cat</label>
+
+      <label for='pets-nickname'>Pets Nickname:</label>
+      <input 
+        type='text'
+        id='pets-nickname'
+        name='petsNickname'
+        value={petNickname}
+        onChange={event => setPetNickname(event.target.value)}
+      />
     </form>
   )
 }
