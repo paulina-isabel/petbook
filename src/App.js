@@ -6,31 +6,31 @@ import Header from './components/Header/Header';
 import { fetchPets } from './api-calls';
 
 function App() {
-const [ postedPet, setNewPet ] = useState([])
-const [ allPets, setNewAllPets ] = useState([])
-  
-function addNewPet(newPet){
-  setNewPet(newPet)
-  setNewAllPets([...allPets.pets, postedPet])
-}
+  const [ newPet, setNewPet ] = useState([])
+  const [ allPets, setAllPets ] = useState([])
+    
+  function addNewPet(newPet){
+    setNewPet(newPet)
+    setAllPets([...allPets.pets, newPet])
+  }
 
   useEffect(() => {
     fetchPets()
     .then(data => {
-      setNewAllPets(data)
-      console.log(allPets.pets, 'this is allPets.pets')
+      setAllPets(data.pets)
+      console.log(data, 'this is data in fetch call')
     })
 
     // .catch(error => setError())
   }, [])
 
-  console.log(allPets)
+  console.log(allPets, 'this is allPets')
 
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<HomeView addNewPet={addNewPet}/>}/>
+        <Route path="/" element={<HomeView addNewPet={addNewPet} allPets={allPets}/>}/>
       </Routes>
       
     </div>

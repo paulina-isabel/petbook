@@ -1,31 +1,22 @@
 import PetCard from "../PetCard/PetCard"
 
-const AllPets = () => {
+const AllPets = ({ allPets }) => {
+console.log(allPets, 'all pets in AllPets')
 
-  const pets = [
-    {
-      name: "Pluto",
-      age: 6,
-      owner: "Paulina"
-    },
-    {
-      name: "Linus",
-      age: 6,
-      owner: "Paulina"
-    }
-  ]
-
-  const allPets = pets.map((pet) => {
+  const pets = allPets.map((pet) => {
     return <PetCard 
-      name={pet.name}
-      age={pet.age}
-      owner={pet.owner}
+      key={pet.id}
+      id={pet.id}
+      name={pet.petName}
+      age={pet.petAge}
+      owner={pet.petOwnersName}
+      funFact={pet.petFunFact}
       />
   })
 
   return (
     <div className="all-pets-container">
-      {allPets}
+      {pets}
     </div>
   )
 }
