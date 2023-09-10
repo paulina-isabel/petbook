@@ -1,12 +1,10 @@
 import { useState } from 'react'
 import './PetDetails.css'
 import { useParams } from 'react-router-dom'
+import cat from '../../images/cat.png'
 
 function PetDetails({allPets}) {
-  // const [selectedPetAndOwner, setSeclectedPetAndOwner] = useState(petOwnerInfo)
   const { id } = useParams()
-  console.log('id', id)
-  console.log('pet', allPets)
 
   const foundPet = allPets.find(pet => pet.id === id)
 
@@ -15,7 +13,7 @@ function PetDetails({allPets}) {
         <button>Back to All Pets</button>
         <section className='pet-owner-info-container'>
           <div className='owner-info'>
-            <span>🐱</span>
+            <img src={cat}></img>
             <p>Owner Name: {foundPet.petOwnersName} </p>
             <p>Owner Details: </p>
           </div>

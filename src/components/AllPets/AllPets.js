@@ -10,7 +10,6 @@ const AllPets = ({ allPets }) => {
       age={pet.petAge}
       owner={pet.petOwnersName}
       funFact={pet.petFunFact}
-      
       />
   })
 
