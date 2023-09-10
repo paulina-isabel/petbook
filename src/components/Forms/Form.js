@@ -1,7 +1,9 @@
 import './Form.css';
 import { useState } from 'react';
+import { postPet } from '../../api-calls'
 
-function Form() {
+
+function Form({ addNewPet }) {
   const [petName, setPetName] = useState("");
   const [petNickname, setPetNickname] = useState("");
   const [petAge, setPetAge] = useState("");
@@ -9,7 +11,9 @@ function Form() {
   const [petOwnersName, setPetOwnersName] = useState("");
   const [petType, setPetType] = useState("")
 
-  function submitNewPets() {
+  function submitNewPets(e) {
+    e.preventDefault()
+
     const newPet = {
       id: Date.now(),
       petName,
@@ -20,8 +24,14 @@ function Form() {
     }
     if (!newPet.petName || !newPet.petNickname || !newPet.petAge || !newPet.petFunFact || !newPet.petOwnersName) {
       return alert('Fill all inputs!')
-    }
+    } else {
+    postPet(newPet)
+    .then(data => {
+      addNewPet(data)
+    })
+    
     clearInputs()
+    }
   }
 
   function clearInputs() {

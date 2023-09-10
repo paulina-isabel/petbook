@@ -1,10 +1,10 @@
 import AllPets from "../AllPets/AllPets";
 import Form from '../Forms/Form'
 
-const HomeView = () => {
+const HomeView = ({ addNewPet }) => {
   return (
     <div className="home-view">
-      <Form />
+      <Form addNewPet={ addNewPet }/>
       <AllPets />
     </div>
   )
