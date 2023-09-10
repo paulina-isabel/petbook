@@ -5,6 +5,7 @@ import HomeView from './components/HomeView/HomeView';
 import Header from './components/Header/Header';
 import { fetchPets } from './api-calls';
 import Error from './components/Error/Error';
+import PetDetails from './components/PetDetails/PetDetails';
 
 const App = () => {
   const [ allPets, setAllPets ] = useState([])
@@ -27,6 +28,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<HomeView addNewPet={addNewPet} allPets={allPets}/>}/>
+        <Route path="/:id" element={<PetDetails/>}/>
       </Routes>
       {error && <Error error={error} />}
     </div>
