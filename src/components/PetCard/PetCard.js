@@ -1,6 +1,6 @@
-import './PetCard.css'
-import cat from '../../images/cat.png'
-import dog from '../../images/dog.png'
+import './PetCard.css';
+import cat from '../../images/cat.png';
+import dog from '../../images/dog.png';
 
 const PetCard = ({ name, age, owner, funFact, nickname }) => {
 
@@ -20,4 +20,4 @@ const PetCard = ({ name, age, owner, funFact, nickname }) => {
   )
 }
 
-export default PetCard
+export default PetCard;

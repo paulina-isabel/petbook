@@ -1,5 +1,5 @@
 import AllPets from "../AllPets/AllPets";
-import Form from '../Forms/Form'
+import Form from '../Forms/Form';
 
 const HomeView = ({ addNewPet, allPets }) => {
   return (
@@ -10,4 +10,4 @@ const HomeView = ({ addNewPet, allPets }) => {
   )
 }
 
-export default HomeView
+export default HomeView;

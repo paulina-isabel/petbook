@@ -6,12 +6,12 @@ import Header from './components/Header/Header';
 import { fetchPets } from './api-calls';
 import Error from './components/Error/Error';
 
-function App() {
+const App = () => {
   const [ allPets, setAllPets ] = useState([])
   const [error, setError] = useState('')
   
-  function addNewPet(newPet){
-    setAllPets([...allPets.pets, newPet])
+  const addNewPet = (newPet) => {
+    setAllPets([...allPets, newPet])
   }
 
   useEffect(() => {

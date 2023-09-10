@@ -1,8 +1,7 @@
-import './Header.css'
-import logo from '../../images/logo.png'
+import './Header.css';
+import logo from '../../images/logo.png';
 
-
-export default function Header() {
+const Header = () => {
     return (
         <header className='header'>
             <div className='logo-container'>
@@ -15,3 +14,5 @@ export default function Header() {
         </header>
     )
 }
+
+export default Header;

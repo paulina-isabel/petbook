@@ -1,7 +1,7 @@
-import './Error.css'
-import shockedCat from '../../images/hang-niu-Tn8DLxwuDMA-unsplash.jpg'
+import './Error.css';
+import shockedCat from '../../images/hang-niu-Tn8DLxwuDMA-unsplash.jpg';
 
-function Error({error}) {
+const Error = ({error}) => {
   return (
     <section className='error'>
       <h2>{error}</h2>
@@ -11,4 +11,4 @@ function Error({error}) {
   )
 }
 
-export default Error
+export default Error;

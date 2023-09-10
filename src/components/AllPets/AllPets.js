@@ -1,8 +1,6 @@
-import PetCard from "../PetCard/PetCard"
+import PetCard from "../PetCard/PetCard";
 
 const AllPets = ({ allPets }) => {
-console.log(allPets, 'all pets in AllPets')
-
   const pets = allPets.map((pet) => {
     return <PetCard 
       key={pet.id}
@@ -22,4 +20,4 @@ console.log(allPets, 'all pets in AllPets')
   )
 }
 
-export default AllPets
+export default AllPets;
