@@ -50,7 +50,7 @@ function Form({addNewPet}) {
       <img className='paws-image' src={paws} alt='paws'/>
       <div className='form-wrapper'>
         <form>
-          <div className='pets-name-section'>
+          <div className='pets-name-section sec'>
             <label htmlFor='pets-name'>Pets Name:</label>
             <input
               type='text'
@@ -60,7 +60,7 @@ function Form({addNewPet}) {
               onChange={event => setPetName(event.target.value)}
             />
           </div>
-          <div className='pets-type-checkbox'>
+          <div className='pets-type-checkbox sec'>
             <input
               type='checkbox'
               checked={petType === 'dog'}
@@ -79,7 +79,7 @@ function Form({addNewPet}) {
             />
             <label htmlFor='cat'>Cat</label>
           </div>
-          <div className='pets-nickname-section'>
+          <div className='pets-nickname-section sec'>
             <label htmlFor='pets-nickname'>Pets Nickname:</label>
             <input
               type='text'
@@ -89,7 +89,7 @@ function Form({addNewPet}) {
               onChange={event => setPetNickname(event.target.value)}
             />
           </div>
-          <div className='pets-age-section'>
+          <div className='pets-age-section sec'>
             <label htmlFor='pets-age'>Pets Age:</label>
             <input
               type='text'
@@ -100,7 +100,7 @@ function Form({addNewPet}) {
             />
           </div>
 
-          <div className='pets-fun-fact-section'>
+          <div className='pets-fun-fact-section sec'>
             <label htmlFor='pets-fun-fact'>Pets Fun Fact:</label>
             <input
               type='text'
@@ -111,7 +111,7 @@ function Form({addNewPet}) {
             />
           </div>
 
-          <div className='pet-owners-name-section'>
+          <div className='pet-owners-name-section sec'>
             <label htmlFor='pet-owners-name'>Pet Owners Name:</label>
             <input
               type='text'

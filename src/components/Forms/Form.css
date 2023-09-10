@@ -3,15 +3,9 @@
   flex-direction: column;
   border-color: blueviolet;
   border-style: solid;
-  width: 10%;
+  width: 20%;
   border-radius: 8%;
   margin-left: 20px;
-}
-
-.paws-image {
-  display: flex;
-  width: 140px;
-  padding: 25px;
 }
 
 .form-wrapper {
@@ -21,5 +15,16 @@
 p {
   display: flex;
   justify-content: center;
+  font-weight: bold;
+  font-size: 25px;
 }
 
+.sec {
+  padding: 20px;
+}
+
+.paws-image {
+  width: 190px;
+  padding: 20px;
+  justify-content: center;
+}
