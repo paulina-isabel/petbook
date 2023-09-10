@@ -3,8 +3,7 @@ import cat from '../../images/cat.png';
 import dog from '../../images/dog.png';
 import { Link} from 'react-router-dom';
 
-const PetCard = ({ name, age, owner, funFact, nickname }) => {
- 
+const PetCard = ({ id, name, age, owner, funFact, nickname }) => {
   const petIcon = () => {
 
   }
@@ -17,7 +16,7 @@ const PetCard = ({ name, age, owner, funFact, nickname }) => {
       <p className='age'>Age: {age} y/o</p>
       <p className='owner'>Owner: {owner}</p>
       <p className='fun-fact'>Fun Fact: {funFact}</p>
-      <Link><img></img>Image here</Link>
+      <Link to={`/${id}`}><img></img>Image here</Link>
     </div>
   )
 }
