@@ -23,15 +23,7 @@ function Form({addNewPet}) {
       petFunFact,
       petOwnersName,
     };
-    if (
-      !newPet.petName ||
-      !newPet.petNickname ||
-      !newPet.petAge ||
-      !newPet.petFunFact ||
-      !newPet.petOwnersName
-    ) {
-      return alert('Fill all inputs!');
-    }
+
     if (!newPet.petName || !newPet.petNickname || !newPet.petAge || !newPet.petFunFact || !newPet.petOwnersName) {
       return alert('Fill all inputs!')
     } else {
