@@ -1,26 +1,23 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
 import './App.css';
-import { fetchPets } from './api-calls';
-import Form from './components/Forms/Form';
+import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import HomeView from './components/HomeView/HomeView';
 import Header from './components/Header/Header';
+import { fetchPets } from './api-calls';
 import Error from './components/Error/Error';
 
-function App() {
-const [ postedPet, setNewPet ] = useState([])
-const [ allPets, setNewAllPets ] = useState([])
-const [error, setError] = useState('')
+const App = () => {
+  const [ allPets, setAllPets ] = useState([])
+  const [error, setError] = useState('')
   
-function addNewPet(newPet){
-  setNewPet(newPet)
-  setNewAllPets([...allPets.pets, postedPet])
-}
+  const addNewPet = (newPet) => {
+    setAllPets([...allPets, newPet])
+  }
 
   useEffect(() => {
     fetchPets()
     .then(data => {
-      setNewAllPets(data)
-      console.log('all pets', allPets.pets)
+      setAllPets(data.pets)
     })
     .catch(error => setError(`Request failed - ${error.message}`))
   }, [])
@@ -28,8 +25,10 @@ function addNewPet(newPet){
   return (
     <div className="App">
       <Header />
+      <Routes>
+        <Route path="/" element={<HomeView addNewPet={addNewPet} allPets={allPets}/>}/>
+      </Routes>
       {error && <Error error={error} />}
-      <Form addNewPet={ addNewPet }/>
     </div>
   );
 }
