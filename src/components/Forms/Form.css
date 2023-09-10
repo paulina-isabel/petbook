@@ -1,0 +1,25 @@
+.form-section {
+  display: flex;
+  flex-direction: column;
+  border-color: blueviolet;
+  border-style: solid;
+  width: 10%;
+  border-radius: 8%;
+  margin-left: 20px;
+}
+
+.paws-image {
+  display: flex;
+  width: 140px;
+  padding: 25px;
+}
+
+.form-wrapper {
+  display: flex;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+}
+
