@@ -69,7 +69,7 @@ const Form = ({ addNewPet }) => {
               name='dog'
             />
             <label htmlFor='dog'>Dog</label>
-
+            
             <input
               type='checkbox'
               checked={petType === 'cat'}
