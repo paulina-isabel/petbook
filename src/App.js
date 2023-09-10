@@ -28,7 +28,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<HomeView addNewPet={addNewPet} allPets={allPets}/>}/>
-        <Route path="/:id" element={<PetDetails/>}/>
+        <Route path="/:id" element={<PetDetails allPets={allPets}/>}/>
       </Routes>
       {error && <Error error={error} />}
     </div>
