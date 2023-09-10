@@ -10,10 +10,12 @@ function PetDetails({allPets}) {
 
     return foundPet && (
       <article key={foundPet.id}>
-        <button>Back to All Pets</button>
+        <div className='back-home-button-container'>
+          <button>Back to All Pets</button>
+        </div>
         <section className='pet-owner-info-container'>
           <div className='owner-info'>
-            <img src={cat}></img>
+            <img className='pet-image'src={cat} alt='cat' />
             <p>Owner Name: {foundPet.petOwnersName} </p>
             <p>Owner Details: </p>
           </div>

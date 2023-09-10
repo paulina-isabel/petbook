@@ -1,24 +1,39 @@
 article {
-  display: flex;
-  flex-direction: row;
+  background: orange;
+  background: cover;
+  margin-top: -3rem;
+  height: 100vh
+  /* display: flex;
+  flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
   margin: 2rem 2rem;
-  align-items: center;
+  align-items: center; */
 }
 
 .pet-owner-info-container {
   display: flex;
-  
+  justify-content: center;
+  border: 3px solid #333333
 }
 
 .owner-info {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 1rem
 }
 
 .pet-info {
   display: flex;
   flex-direction: column;
+}
+
+.pet-image {
+  height: 5em;
+  width: 5em;
+}
+
+.back-home-button-container {
+  margin-right: 60rem;
 }
