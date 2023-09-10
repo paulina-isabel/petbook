@@ -8,6 +8,7 @@ console.log(allPets, 'all pets in AllPets')
       key={pet.id}
       id={pet.id}
       name={pet.petName}
+      nickname={pet.petNickname}
       age={pet.petAge}
       owner={pet.petOwnersName}
       funFact={pet.petFunFact}
