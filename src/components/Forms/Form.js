@@ -1,16 +1,20 @@
 import './Form.css';
 import { useState } from 'react';
+import { postPet } from '../../api-calls'
+
 import paws from '../../images/paws.png'
 
-function Form() {
-  const [petName, setPetName] = useState('');
-  const [petNickname, setPetNickname] = useState('');
-  const [petAge, setPetAge] = useState('');
-  const [petFunFact, setPetFunFact] = useState('');
-  const [petOwnersName, setPetOwnersName] = useState('');
-  const [petType, setPetType] = useState('');
+function Form({addNewPet}) {
+  const [petName, setPetName] = useState("");
+  const [petNickname, setPetNickname] = useState("");
+  const [petAge, setPetAge] = useState("");
+  const [petFunFact, setPetFunFact] = useState("");
+  const [petOwnersName, setPetOwnersName] = useState("");
+  const [petType, setPetType] = useState("")
 
-  function submitNewPets() {
+  function submitNewPets(e) {
+    e.preventDefault()
+
     const newPet = {
       id: Date.now(),
       petName,
@@ -28,7 +32,16 @@ function Form() {
     ) {
       return alert('Fill all inputs!');
     }
-    clearInputs();
+    if (!newPet.petName || !newPet.petNickname || !newPet.petAge || !newPet.petFunFact || !newPet.petOwnersName) {
+      return alert('Fill all inputs!')
+    } else {
+    postPet(newPet)
+    .then(data => {
+      addNewPet(data)
+    })
+    
+    clearInputs()
+    }
   }
 
   function clearInputs() {
