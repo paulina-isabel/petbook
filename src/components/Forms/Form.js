@@ -4,7 +4,7 @@ import { postPet } from '../../api-calls'
 
 import paws from '../../images/paws.png'
 
-function Form({addNewPet}) {
+const Form = ({ addNewPet }) => {
   const [petName, setPetName] = useState("");
   const [petNickname, setPetNickname] = useState("");
   const [petAge, setPetAge] = useState("");
@@ -12,7 +12,7 @@ function Form({addNewPet}) {
   const [petOwnersName, setPetOwnersName] = useState("");
   const [petType, setPetType] = useState("")
 
-  function submitNewPets(e) {
+  const submitNewPets = (e) => {
     e.preventDefault()
 
     const newPet = {
@@ -36,12 +36,12 @@ function Form({addNewPet}) {
     }
   }
 
-  function clearInputs() {
-    setPetName('');
-    setPetNickname('');
-    setPetAge('');
-    setPetFunFact('');
-    setPetOwnersName('');
+  const clearInputs = () => {
+    setPetName("");
+    setPetNickname("");
+    setPetAge("");
+    setPetFunFact("");
+    setPetOwnersName("");
   }
 
   return (
