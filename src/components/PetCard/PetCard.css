@@ -1,0 +1,18 @@
+.pet-card {
+  text-align: center;
+  background-color: beige;
+  width: 300px;
+  height: 300px;
+  padding: 30px;
+  margin: 10px;
+}
+
+.all-pets-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pet-icon{
+  height: 150px;
+}
