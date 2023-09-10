@@ -1,0 +1,23 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error img {
+  height: 30em;
+  width: 20em;
+  border-radius: 20px;
+}
+
+.error-button {
+	background: linear-gradient(to bottom, #4c5a6a 5%, #080000 100%);
+    border-radius: 10px;
+    border: 2px solid #b0babf;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: bold;
+    padding: .5em 1em;
+    margin-top: 1rem;
+}
