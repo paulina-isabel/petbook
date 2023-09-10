@@ -1,9 +1,6 @@
 import PetCard from "../PetCard/PetCard";
-import { useParams } from 'react-router-dom'
 
 const AllPets = ({ allPets }) => {
-  // console.log('ahh', useParams().id)
- 
   const pets = allPets.map((pet) => {
     return <PetCard 
       key={pet.id}
