@@ -4,13 +4,13 @@ import { Routes, Route } from 'react-router-dom';
 import HomeView from './components/HomeView/HomeView';
 import Header from './components/Header/Header';
 import { fetchPets } from './api-calls';
+import Error from './components/Error/Error';
 
 function App() {
-  const [ newPet, setNewPet ] = useState([])
   const [ allPets, setAllPets ] = useState([])
-    
+  const [error, setError] = useState('')
+  
   function addNewPet(newPet){
-    setNewPet(newPet)
     setAllPets([...allPets.pets, newPet])
   }
 
@@ -18,13 +18,9 @@ function App() {
     fetchPets()
     .then(data => {
       setAllPets(data.pets)
-      console.log(data, 'this is data in fetch call')
     })
-
-    // .catch(error => setError())
+    .catch(error => setError(`Request failed - ${error.message}`))
   }, [])
-
-  console.log(allPets, 'this is allPets')
 
   return (
     <div className="App">
@@ -32,7 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeView addNewPet={addNewPet} allPets={allPets}/>}/>
       </Routes>
-      
+      {error && <Error error={error} />}
     </div>
   );
 }
