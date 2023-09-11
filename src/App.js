@@ -10,7 +10,7 @@ import PetDetails from './components/PetDetails/PetDetails';
 const App = () => {
   const [ allPets, setAllPets ] = useState([])
   const [error, setError] = useState('')
-  
+
   const addNewPet = (newPet) => {
     setAllPets([...allPets, newPet])
   }
