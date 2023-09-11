@@ -1,24 +1,58 @@
 article {
-  display: flex;
-  flex-direction: row;
+  background: #fbcb7f;
+  /* background: cover; */
+  margin-top: -2.5rem;
+  height: 100vh
+  /* display: flex;
+  flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
   margin: 2rem 2rem;
-  align-items: center;
+  align-items: center; */
 }
 
 .pet-owner-info-container {
   display: flex;
-  
+  justify-content: center;
+  border: 3px solid #333333;
+  background: white;
+  margin: 5rem
 }
 
 .owner-info {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 1rem
+}
+
+.owner-info p {
+  background: #ffe8cf;
+  padding: 1em
+}
+
+.pet-info p {
+  background: #ffe8cf;
+  padding: 1em
 }
 
 .pet-info {
   display: flex;
   flex-direction: column;
 }
+
+.pet-image {
+  border: .5em solid #72788D;
+  border-radius: 10px;
+  height: 10em;
+  width: 10em;
+}
+
+.back-to-all-pets-button-container {
+  margin-right: 60rem;
+}
+
+.back-to-all-pets-button {
+  top: 2rem;
+}
+

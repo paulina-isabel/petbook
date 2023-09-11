@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './PetDetails.css'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import cat from '../../images/cat.png'
 
 function PetDetails({allPets}) {
@@ -10,10 +10,12 @@ function PetDetails({allPets}) {
 
     return foundPet && (
       <article key={foundPet.id}>
-        <button>Back to All Pets</button>
+        <div className='back-to-all-pets-button-container'>
+          <Link to={'/'}><button className='back-to-all-pets-button'>Back to All Pets</button></Link>
+        </div>
         <section className='pet-owner-info-container'>
           <div className='owner-info'>
-            <img src={cat}></img>
+            <img className='pet-image'src={cat} alt='cat' />
             <p>Owner Name: {foundPet.petOwnersName} </p>
             <p>Owner Details: </p>
           </div>
