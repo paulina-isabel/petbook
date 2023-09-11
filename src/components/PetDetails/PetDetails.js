@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './PetDetails.css'
 import { Link, useParams } from 'react-router-dom'
 import cat from '../../images/cat.png'
