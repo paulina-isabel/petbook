@@ -13,7 +13,7 @@ function PetDetails({allPets}) {
         <div className='back-to-all-pets-button-container'>
           <Link to={'/'}><button className='back-to-all-pets-button'>Back to All Pets</button></Link>
         </div>
-        <section className='pet-owner-info-container'>
+        <section className='details-container'>
           <div className='owner-info'>
             <img className='pet-image'src={cat} alt='cat' />
             <p>Owner Name: {foundPet.petOwnersName} </p>
