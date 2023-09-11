@@ -121,7 +121,7 @@ const Form = ({ addNewPet }) => {
               onChange={event => setPetOwnersName(event.target.value)}
             />
           </div>
-          <button onClick={event => submitNewPets(event)}>Submit</button>
+          <button className='button' onClick={event => submitNewPets(event)}>Submit</button>
         </form>
       </div>
     </div>
