@@ -5,8 +5,8 @@ import cat from '../../images/cat.png'
 function PetDetails({allPets}) {
   const { id } = useParams()
 
-  const foundPet = allPets.find(pet => pet.id === id)
-
+const foundPet = allPets.find(pet => pet.id === Number(id))
+ 
     return foundPet && (
       <article key={foundPet.id}>
         <div className='back-to-all-pets-button-container'>
