@@ -10,8 +10,11 @@ function PetDetails({allPets}) {
 
     return foundPet && (
       <article key={foundPet.id}>
-        <div className='back-home-button-container'>
-          <button>Back to All Pets</button>
+        <div className='back-to-all-pets-button-container'>
+        
+
+          <button className='back-to-all-pets-button'>Back to All Pets</button>
+         
         </div>
         <section className='pet-owner-info-container'>
           <div className='owner-info'>

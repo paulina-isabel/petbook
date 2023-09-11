@@ -1,7 +1,7 @@
 article {
-  background: orange;
-  background: cover;
-  margin-top: -3rem;
+  background: #fbcb7f;
+  /* background: cover; */
+  margin-top: -2.5rem;
   height: 100vh
   /* display: flex;
   flex-direction: column;
@@ -14,7 +14,9 @@ article {
 .pet-owner-info-container {
   display: flex;
   justify-content: center;
-  border: 3px solid #333333
+  border: 3px solid #333333;
+  background: white;
+  margin: 5rem
 }
 
 .owner-info {
@@ -22,6 +24,16 @@ article {
   flex-direction: column;
   align-items: center;
   margin: 1rem
+}
+
+.owner-info p {
+  background: #ffe8cf;
+  padding: 1em
+}
+
+.pet-info p, h2 {
+  background: #ffe8cf;
+  padding: 1em
 }
 
 .pet-info {
@@ -34,6 +46,11 @@ article {
   width: 5em;
 }
 
-.back-home-button-container {
+.back-to-all-pets-button-container {
   margin-right: 60rem;
 }
+
+.back-to-all-pets-button {
+  top: 2rem;
+}
+
