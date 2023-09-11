@@ -1,21 +1,6 @@
-.spinner {
-  display: inline-block;
-  width: 3rem;
-  height: 3rem;
-  border: 1.5em solid;
-  border-color: #72788d ;
-  border-right-color: transparent;
-  border-radius: 50%;
-  animation: spin 1.2s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-      transform: rotate(0deg);
-  }
-  100% {
-      transform: rotate(360deg);
-  }
+.spinner img {
+  height: 100%;
+  width: 100%
 }
 
 .sr-only {
@@ -28,3 +13,23 @@
   white-space: nowrap;
   border: 0;
 }
+
+/* .spinner {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  border: 1.5em solid;
+  border-color: #72788d ;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+} */
+
+/* @keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+} */
