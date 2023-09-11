@@ -7,7 +7,6 @@ describe('template spec', () => {
     cy.visit('http://localhost:3000/')
   })
 
-  
   it('Should select pet and be shown pet details for that pet', () => {
     cy.get('.pet-card').get('a').click()
     cy.url().should('eq', 'http://localhost:3000/2')
@@ -29,4 +28,5 @@ describe('template spec', () => {
     cy.get('.back-to-all-pets-button').click()
     cy.url().should('eq', 'http://localhost:3000/')
   })
+  
 })
