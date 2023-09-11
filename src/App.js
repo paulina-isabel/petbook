@@ -33,7 +33,7 @@ const App = () => {
       <Header />
       {loading && <Loading />}
       <Routes>
-        <Route path="/" element={<HomeView addNewPet={addNewPet} allPets={allPets} setLoading={setLoading}/>}/>
+        <Route path="/" element={<HomeView addNewPet={addNewPet} allPets={allPets} setLoading={setLoading} setError={setError}/>}/>
         <Route path="/:id" element={<PetDetails allPets={allPets} />}/>
       </Routes>
       {error && <Error error={error} />}

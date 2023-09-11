@@ -4,7 +4,7 @@ import { postPet } from '../../api-calls'
 
 import paws from '../../images/paws.png'
 
-const Form = ({ addNewPet, setLoading }) => {
+const Form = ({ addNewPet, setLoading, setError }) => {
   const [petName, setPetName] = useState("");
   const [petNickname, setPetNickname] = useState("");
   const [petAge, setPetAge] = useState("");
@@ -32,9 +32,10 @@ const Form = ({ addNewPet, setLoading }) => {
     .then(data => {
       setLoading(false)
       addNewPet(data)
+      clearInputs()
     })
-    
-    clearInputs()
+    .catch(error => setError(`Post Failed - ${error.message}`))
+    setLoading(false)
     }
   }
 
