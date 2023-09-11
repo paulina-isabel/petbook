@@ -31,7 +31,7 @@ article {
   padding: 1em
 }
 
-.pet-info p, h2 {
+.pet-info p {
   background: #ffe8cf;
   padding: 1em
 }
@@ -42,8 +42,10 @@ article {
 }
 
 .pet-image {
-  height: 5em;
-  width: 5em;
+  border: .5em solid #72788D;
+  border-radius: 10px;
+  height: 10em;
+  width: 10em;
 }
 
 .back-to-all-pets-button-container {
