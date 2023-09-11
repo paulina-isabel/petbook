@@ -2,7 +2,12 @@ import './Loading.css'
 
 const Loading = () => {
   return (
-    <p>LOADING</p>
+    <div className='spinner' role='status'>
+      <span className='sr-only'>LOADING</span>
+    </div>
+
+
+    
   )
 }
 
