@@ -56,3 +56,23 @@ article {
   top: 2rem;
 }
 
+.back-to-all-pets-button {
+  padding: 10px 40px;
+  background: #000;
+  border:0;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: helvetica;
+  font-size: 15px;
+  letter-spacing: 3px;
+  position: relative;
+  transition: all .4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  cursor: pointer;
+  display: block;
+  margin: 40px auto;
+  border-radius: 20px;
+}
+
+.back-to-all-pets-button:hover{
+  padding: 15px 20px ;
+}
