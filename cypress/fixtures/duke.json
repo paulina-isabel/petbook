@@ -1,0 +1,12 @@
+{
+    "pets": [
+        {
+    "id": "2",
+    "petName": "Duke",
+    "petNickname": "Doodle-bee",
+    "petAge": "19",
+    "petFunFact": "He likes to go for car rides",
+    "petOwnersName": "Alex"
+}
+]
+}
