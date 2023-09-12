@@ -1,6 +1,7 @@
 import './Form.css';
 import { useState } from 'react';
 import { postPet } from '../../api-calls'
+import PropTypes from 'prop-types'
 
 import paws from '../../images/paws.png'
 
@@ -137,3 +138,9 @@ const Form = ({ addNewPet, setLoading, setError }) => {
 }
 
 export default Form;
+
+Form.propTypes = {
+  addNewPet: PropTypes.func.isRequired,
+  setLoading: PropTypes.func.isRequired,
+  setError: PropTypes.func.isRequired
+}
