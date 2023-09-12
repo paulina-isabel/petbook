@@ -10,7 +10,7 @@ const Form = ({ addNewPet, setLoading, setError }) => {
   const [petAge, setPetAge] = useState("");
   const [petFunFact, setPetFunFact] = useState("");
   const [petOwnersName, setPetOwnersName] = useState("");
-  const [petType, setPetType] = useState("")
+  const [type, setType] = useState("")
 
   const submitNewPets = (e) => {
     e.preventDefault()
@@ -22,7 +22,10 @@ const Form = ({ addNewPet, setLoading, setError }) => {
       petAge,
       petFunFact,
       petOwnersName,
+      type
     };
+
+    console.log(newPet, 'this is new pet')
 
     if (!newPet.petName || !newPet.petNickname || !newPet.petAge || !newPet.petFunFact || !newPet.petOwnersName) {
       return alert('Fill all inputs!')
@@ -45,7 +48,7 @@ const Form = ({ addNewPet, setLoading, setError }) => {
     setPetAge("");
     setPetFunFact("");
     setPetOwnersName("");
-    setPetType("")
+    setType("");
   }
 
   return (
@@ -67,21 +70,21 @@ const Form = ({ addNewPet, setLoading, setError }) => {
           <div className='pets-type-checkbox sec'>
             <input
               type='checkbox'
-              checked={petType === 'dog'}
-              onChange={() => setPetType('dog')}
-              id='dog'
-              name='dog'
+              checked={type === 'Dog'}
+              onChange={() => setType('Dog')}
+              id='Dog'
+              name='Dog'
             />
-            <label htmlFor='dog'>Dog</label>
+            <label htmlFor='Dog'>Dog</label>
             
             <input
               type='checkbox'
-              checked={petType === 'cat'}
-              onChange={() => setPetType('cat')}
-              id='cat'
-              name='cat'
+              checked={type === 'Cat'}
+              onChange={() => setType('Cat')}
+              id='Cat'
+              name='Cat'
             />
-            <label htmlFor='cat'>Cat</label>
+            <label htmlFor='Cat'>Cat</label>
           </div>
           <div className='pets-nickname-section sec'>
             <label htmlFor='pets-nickname'>Pets Nickname:</label>
