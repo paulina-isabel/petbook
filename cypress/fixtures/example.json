@@ -1,5 +1,36 @@
 {
-  "name": "Using fixtures to represent data",
-  "email": "hello@cypress.io",
-  "body": "Fixtures are a great way to mock data for responses to routes"
-}
+  "pets": [
+  {
+  "id": "1",
+  "petName": "Oreo",
+  "petNickname": "Oreo",
+  "petAge": "2.5",
+  "petFunFact": "hes had 2 types of tape worms",
+  "petOwnersName": "Judy"
+  },
+  {
+  "id": "2",
+  "petName": "Duke",
+  "petNickname": "Doodle-bee",
+  "petAge": "19",
+  "petFunFact": "He likes to go for car rides",
+  "petOwnersName": "Alex"
+  },
+  {
+  "id": "3",
+  "petName": "Pluto",
+  "petNickname": "Pluto",
+  "petAge": "1",
+  "petFunFact": "hes really fun",
+  "petOwnersName": "Paulina"
+  },
+  {
+  "id": "4",
+  "petName": "Rocco",
+  "petNickname": "Rocco",
+  "petAge": "1",
+  "petFunFact": "hes really really fun",
+  "petOwnersName": "Alice"
+  }
+  ]
+  }

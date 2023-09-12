@@ -65,6 +65,7 @@ const Form = ({ addNewPet }) => {
               type='checkbox'
               checked={petType === 'dog'}
               onChange={() => setPetType('dog')}
+              value='dog'
               id='dog'
               name='dog'
             />
@@ -74,6 +75,7 @@ const Form = ({ addNewPet }) => {
               type='checkbox'
               checked={petType === 'cat'}
               onChange={() => setPetType('cat')}
+              value='cat'
               id='cat'
               name='cat'
             />
