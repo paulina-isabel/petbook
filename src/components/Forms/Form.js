@@ -16,7 +16,6 @@ const Form = ({ addNewPet, setLoading, setError }) => {
     e.preventDefault()
 
     const newPet = {
-      id: Date.now().toString(),
       petName,
       petNickname,
       petAge,
@@ -65,8 +64,10 @@ const Form = ({ addNewPet, setLoading, setError }) => {
               name='petsName'
               value={petName}
               onChange={event => setPetName(event.target.value)}
+              required
             />
           </div>
+
           <div className='pets-type-checkbox sec'>
             <input
               type='checkbox'
@@ -76,7 +77,6 @@ const Form = ({ addNewPet, setLoading, setError }) => {
               name='Dog'
             />
             <label htmlFor='Dog'>Dog</label>
-            
             <input
               type='checkbox'
               checked={type === 'Cat'}
@@ -94,6 +94,7 @@ const Form = ({ addNewPet, setLoading, setError }) => {
               name='petsNickname'
               value={petNickname}
               onChange={event => setPetNickname(event.target.value)}
+              required
             />
           </div>
           <div className='pets-age-section sec'>
@@ -104,9 +105,9 @@ const Form = ({ addNewPet, setLoading, setError }) => {
               name='petsAge'
               value={petAge}
               onChange={event => setPetAge(event.target.value)}
+              required
             />
           </div>
-
           <div className='pets-fun-fact-section sec'>
             <label htmlFor='pets-fun-fact'>Pets Fun Fact:</label>
             <input
@@ -115,9 +116,9 @@ const Form = ({ addNewPet, setLoading, setError }) => {
               name='petsFunFact'
               value={petFunFact}
               onChange={event => setPetFunFact(event.target.value)}
+              required
             />
           </div>
-
           <div className='pet-owners-name-section sec'>
             <label htmlFor='pet-owners-name'>Pet Owners Name:</label>
             <input
@@ -126,6 +127,7 @@ const Form = ({ addNewPet, setLoading, setError }) => {
               name='petOwnersName'
               value={petOwnersName}
               onChange={event => setPetOwnersName(event.target.value)}
+              required
             />
           </div>
           <button onClick={event => submitNewPets(event)}>Submit</button>
