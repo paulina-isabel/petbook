@@ -16,13 +16,13 @@ function PetDetails({allPets}) {
         <section className='pet-owner-info-container'>
           <div className='owner-info'>
             <img className='pet-image'src={cat} alt='cat' />
-            <p>Owner Name: {foundPet.petOwnersName} </p>
-            <p>Owner Details: </p>
+            <h2>{foundPet.petName}</h2>
+            <p>Owner: {foundPet.petOwnersName} </p>
           </div>
           <div className='pet-info'>
-            <h2>Pet Name: {foundPet.petName}</h2>
+            <h3>{foundPet.type}</h3>
             <p>Nickname: {foundPet.petNickname}</p>
-            <p>Pet Age: {foundPet.petAge}</p>
+            <p>Age: {foundPet.petAge}</p>
             <p>Fun Facts: {foundPet.petFunFact}</p>
           </div>
         </section>

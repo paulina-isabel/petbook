@@ -6,7 +6,7 @@ import bone from '../../images/bone.png';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-const PetCard = ({ id, name, age, owner, funFact, nickname, type }) => {
+const PetCard = ({ id, name, owner, type }) => {
 
   const checkIcon = (petType) => {
     if (petType === 'Dog') {
@@ -29,10 +29,7 @@ const PetCard = ({ id, name, age, owner, funFact, nickname, type }) => {
       {checkIcon(type)}
       <h2>{name}</h2>
       <h3>{type}</h3>
-      <p className='nickname'>Nickname: {nickname}</p>
-      <p className='age'>Age: {age} y/o</p>
       <p className='owner'>Owner: {owner}</p>
-      <p className='fun-fact'>Fun Fact: {funFact}</p>
       <Link to={`/${id}`}>{checkLinkImage(type)}</Link>
     </div>
   )
