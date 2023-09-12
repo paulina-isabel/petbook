@@ -2,10 +2,19 @@ import './PetDetails.css'
 import { Link, useParams } from 'react-router-dom'
 import cat from '../../images/cat.png'
 
-function PetDetails({allPets}) {
+function PetDetails({ allPets }) {
   const { id } = useParams()
 
-  const foundPet = allPets.find(pet => pet.id === id)
+  const foundPet = allPets.find((pet) => {
+      console.log(pet.id, 'pet.id in finder function')
+      console.log(id, 'id in finder function')
+      console.log(pet, 'this is pet in finder function')
+      const petResult = pet.id === id
+      console.log(petResult, 'this is petResult in finderFunction')
+      console.log(allPets, 'allPets')
+      return petResult
+    }
+  )
 
     return foundPet && (
       <article key={foundPet.id}>
