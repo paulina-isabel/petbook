@@ -31,6 +31,7 @@ const Form = ({ addNewPet, setLoading, setError }) => {
     postPet(newPet)
     .then(data => {
       setLoading(false)
+
       addNewPet(data)
       clearInputs()
     })
@@ -128,7 +129,7 @@ const Form = ({ addNewPet, setLoading, setError }) => {
               required
             />
           </div>
-          <button onClick={event => submitNewPets(event)}>Submit</button>
+          <button className='button' onClick={event => submitNewPets(event)}>Submit</button>
         </form>
       </div>
     </div>
