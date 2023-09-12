@@ -1,5 +1,6 @@
 import './PetDetails.css'
 import { Link, useParams } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import cat from '../../images/cat.png'
 
 function PetDetails({allPets}) {
@@ -31,3 +32,6 @@ const foundPet = allPets.find(pet => pet.id === Number(id))
 
 export default PetDetails
 
+PetDetails.propTypes = {
+  allPets: PropTypes.array.isRequired
+}
