@@ -1,6 +1,6 @@
 import './PetDetails.css'
 import { Link, useParams } from 'react-router-dom'
-import cat from '../../images/cat.png'
+import { checkIcon } from '../../utils';
 
 function PetDetails({ allPets }) {
   const id = useParams().id;
@@ -18,7 +18,7 @@ function PetDetails({ allPets }) {
       </div>
       <section className='details-container'>
         <div className='owner-info'>
-          <img className='pet-image'src={cat} alt='cat' />
+          {checkIcon(foundPet.type)}
           <h2>{foundPet.petName}</h2>
           <p>Owner: {foundPet.petOwnersName} </p>
         </div>
