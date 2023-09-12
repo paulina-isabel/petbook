@@ -45,6 +45,7 @@ const Form = ({ addNewPet, setLoading, setError }) => {
     setPetAge("");
     setPetFunFact("");
     setPetOwnersName("");
+    setPetType("")
   }
 
   return (
