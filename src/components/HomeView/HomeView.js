@@ -1,5 +1,6 @@
 import AllPets from "../AllPets/AllPets";
 import Form from '../Forms/Form';
+import './HomeView.css'
 
 const HomeView = ({ addNewPet, allPets, setLoading, setError }) => {
   return (

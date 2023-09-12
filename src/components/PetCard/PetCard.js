@@ -12,10 +12,10 @@ const PetCard = ({ id, name, age, owner, funFact, nickname }) => {
     <div className="pet-card">
       <img className='pet-icon' src={cat} alt='pet icon'/>
       <h2>{name}</h2>
-      <p className='nickname'>Nickname: {nickname}</p>
-      <p className='age'>Age: {age} y/o</p>
+      {/* <p className='nickname'>Nickname: {nickname}</p> */}
+      {/* <p className='age'>Age: {age} y/o</p> */}
       <p className='owner'>Owner: {owner}</p>
-      <p className='fun-fact'>Fun Fact: {funFact}</p>
+      {/* <p className='fun-fact'>Fun Fact: {funFact}</p> */}
       <Link to={`/${id}`}><img></img>Image here</Link>
     </div>
   )
