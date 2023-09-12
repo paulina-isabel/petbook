@@ -23,6 +23,8 @@ const App = () => {
     .catch(error => setError(`Request failed - ${error.message}`))
   }, [])
 
+  console.log(allPets)
+
   return (
     <div className="App">
       <Header />
