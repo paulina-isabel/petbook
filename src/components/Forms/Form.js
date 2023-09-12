@@ -10,10 +10,10 @@ const Form = ({ addNewPet, setLoading, setError }) => {
   const [petAge, setPetAge] = useState("");
   const [petFunFact, setPetFunFact] = useState("");
   const [petOwnersName, setPetOwnersName] = useState("");
-  const [type, setType] = useState("")
+  const [type, setType] = useState("");
 
   const submitNewPets = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     const newPet = {
       petName,
@@ -23,8 +23,6 @@ const Form = ({ addNewPet, setLoading, setError }) => {
       petOwnersName,
       type
     };
-
-    console.log(newPet, 'this is new pet')
 
     if (!newPet.petName || !newPet.petNickname || !newPet.petAge || !newPet.petFunFact || !newPet.petOwnersName) {
       return alert('Fill all inputs!')
@@ -39,7 +37,7 @@ const Form = ({ addNewPet, setLoading, setError }) => {
     .catch(error => setError(`Post Failed - ${error.message}`))
     setLoading(false)
     }
-  }
+  };
 
   const clearInputs = () => {
     setPetName("");
