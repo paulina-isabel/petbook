@@ -11,7 +11,7 @@ article {
   align-items: center; */
 }
 
-.pet-owner-info-container {
+.details-container {
   display: flex;
   justify-content: center;
   border: 3px solid #333333;

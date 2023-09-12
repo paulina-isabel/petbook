@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './PetDetails.css'
 import { Link, useParams } from 'react-router-dom'
 import cat from '../../images/cat.png'
@@ -13,7 +12,7 @@ function PetDetails({allPets}) {
         <div className='back-to-all-pets-button-container'>
           <Link to={'/'}><button className='back-to-all-pets-button'>Back to All Pets</button></Link>
         </div>
-        <section className='pet-owner-info-container'>
+        <section className='details-container'>
           <div className='owner-info'>
             <img className='pet-image'src={cat} alt='cat' />
             <h2>{foundPet.petName}</h2>
