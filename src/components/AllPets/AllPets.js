@@ -1,6 +1,7 @@
 import PetCard from "../PetCard/PetCard";
 
 const AllPets = ({ allPets }) => {
+
   const pets = allPets.map((pet) => {
     return <PetCard 
       key={pet.id}
