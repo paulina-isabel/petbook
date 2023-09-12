@@ -4,7 +4,7 @@ import { postPet } from '../../api-calls'
 
 import paws from '../../images/paws.png'
 
-const Form = ({ addNewPet }) => {
+const Form = ({ addNewPet, setLoading, setError }) => {
   const [petName, setPetName] = useState("");
   const [petNickname, setPetNickname] = useState("");
   const [petAge, setPetAge] = useState("");
@@ -16,7 +16,7 @@ const Form = ({ addNewPet }) => {
     e.preventDefault()
 
     const newPet = {
-      id: Date.now(),
+      id:  Date.now(),
       petName,
       petNickname,
       petAge,
@@ -27,12 +27,16 @@ const Form = ({ addNewPet }) => {
     if (!newPet.petName || !newPet.petNickname || !newPet.petAge || !newPet.petFunFact || !newPet.petOwnersName) {
       return alert('Fill all inputs!')
     } else {
+    setLoading(true)
     postPet(newPet)
     .then(data => {
+      setLoading(false)
+
       addNewPet(data)
+      clearInputs()
     })
-    
-    clearInputs()
+    .catch(error => setError(`Post Failed - ${error.message}`))
+    setLoading(false)
     }
   }
 
