@@ -1,22 +1,16 @@
 import './PetCard.css';
-import cat from '../../images/cat.png';
-import dog from '../../images/dog.png';
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { checkIcon, checkLinkImage } from '../../utils';
 
-const PetCard = ({ id, name, age, owner, funFact, nickname }) => {
-  const petIcon = () => {
-
-  }
+const PetCard = ({ id, name, owner, type }) => {
 
   return (
     <div className="pet-card">
-      <img className='pet-icon' src={cat} alt='pet icon'/>
+      {checkIcon(type)}
       <h2>{name}</h2>
-      {/* <p className='nickname'>Nickname: {nickname}</p> */}
-      {/* <p className='age'>Age: {age} y/o</p> */}
+      <h3>{type}</h3>
       <p className='owner'>Owner: {owner}</p>
-      {/* <p className='fun-fact'>Fun Fact: {funFact}</p> */}
-      <Link to={`/${id}`}><img></img>Image here</Link>
+      <Link to={`/${id}`}>{checkLinkImage(type)}</Link>
     </div>
   )
 }
