@@ -16,7 +16,7 @@ const Form = ({ addNewPet, setLoading, setError }) => {
     e.preventDefault()
 
     const newPet = {
-      id: Date.now(),
+      id:  Date.now(),
       petName,
       petNickname,
       petAge,
@@ -31,6 +31,7 @@ const Form = ({ addNewPet, setLoading, setError }) => {
     postPet(newPet)
     .then(data => {
       setLoading(false)
+
       addNewPet(data)
       clearInputs()
     })
