@@ -1,33 +1,36 @@
 import './PetDetails.css'
 import { Link, useParams } from 'react-router-dom'
-import cat from '../../images/cat.png'
+import { checkIcon } from '../../utils';
 
-function PetDetails({allPets}) {
-  const { id } = useParams()
+function PetDetails({ allPets }) {
+  const id = useParams().id;
 
-const foundPet = allPets.find(pet => pet.id === Number(id))
- 
-    return foundPet && (
-      <article key={foundPet.id}>
-        <div className='back-to-all-pets-button-container'>
-          <Link to={'/'}><button className='back-to-all-pets-button'>Back to All Pets</button></Link>
+  const foundPet = allPets.find((pet) => {
+      const petResult = pet.id === parseInt(id)
+      return petResult
+    }
+  );
+
+  return foundPet && (
+    <article key={foundPet.id}>
+      <div className='back-to-all-pets-button-container'>
+        <Link to={'/'}><button className='back-to-all-pets-button'>Back to All Pets</button></Link>
+      </div>
+      <section className='details-container'>
+        <div className='owner-info'>
+          {checkIcon(foundPet.type)}
+          <h2>{foundPet.petName}</h2>
+          <p>Owner: {foundPet.petOwnersName} </p>
         </div>
-        <section className='details-container'>
-          <div className='owner-info'>
-            <img className='pet-image'src={cat} alt='cat' />
-            <p>Owner Name: {foundPet.petOwnersName} </p>
-            <p>Owner Details: </p>
-          </div>
-          <div className='pet-info'>
-            <h2>Pet Name: {foundPet.petName}</h2>
-            <p>Nickname: {foundPet.petNickname}</p>
-            <p>Pet Age: {foundPet.petAge}</p>
-            <p>Fun Facts: {foundPet.petFunFact}</p>
-          </div>
-        </section>
-      </article>
-  )
-}
+        <div className='pet-info'>
+          <h3>{foundPet.type}</h3>
+          <p>Nickname: {foundPet.petNickname}</p>
+          <p>Age: {foundPet.petAge}</p>
+          <p>Fun Facts: {foundPet.petFunFact}</p>
+        </div>
+      </section>
+    </article>
+  );
+};
 
-export default PetDetails
-
+export default PetDetails;
