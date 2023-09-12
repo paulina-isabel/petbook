@@ -7,6 +7,17 @@ describe('test form', () => {
     .visit('http://localhost:3000')
   })
   it('passes', () => {
+    cy.intercept('POST', 'http://localhost:3001/api/v1/pets', {
+      statusCode: 200,
+      body: {
+        petsName: 'Rocco',
+        type: 'Dog',
+        petsNickname: 'Rock',
+        petsAge: '3',
+        petsFunFact: 'Very Fun',
+        petOwnersName: 'Alice'
+      }
+    })
     cy.visit('http://localhost:3000')
     cy.get('.form-section').should('exist')
     cy.get('.new-pet').contains('Add New Pet')
@@ -23,6 +34,10 @@ describe('test form', () => {
     cy.get('#pets-fun-fact').get('input[name="petsFunFact"]').type('Very Fun')
     cy.get('.pet-owners-name-section > label').contains('Pet Owners Name:')
     cy.get('#pet-owners-name').get('input[name="petOwnersName"]').type('Alice')
-    // cy.get('.paws-image').find('.paws-image[alt="paws"]')
+    cy.get('button')
+    .click()
+    .get('.all-pets-container').children().should('have.length', 5)
+    cy.get('.all-pets-container').last().contains('h2', 'Rocco')
+    cy.get('.all-pets-container').last().contains('p', 'Alice')
   })
 })
