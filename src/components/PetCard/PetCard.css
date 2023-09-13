@@ -49,6 +49,10 @@
   width: 20px;
 }
 
+.delete-icon:hover {
+  cursor: pointer;
+}
+
 .detail-link-icon {
   height: 70px;
 }
