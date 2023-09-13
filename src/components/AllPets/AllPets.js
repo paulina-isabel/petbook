@@ -1,16 +1,16 @@
 import PetCard from "../PetCard/PetCard";
 
 const AllPets = ({ allPets }) => {
-
+console.log(allPets)
   const pets = allPets.map((pet) => {
     return <PetCard 
       key={pet.id}
       id={pet.id}
-      name={pet.petName}
-      nickname={pet.petNickname}
-      age={pet.petAge}
-      owner={pet.petOwnersName}
-      funFact={pet.petFunFact}
+      name={pet.name}
+      nickname={pet.nickname}
+      age={pet.age}
+      owner={pet.ownersName}
+      funFact={pet.funFact}
       type={pet.type}
       />
   })
