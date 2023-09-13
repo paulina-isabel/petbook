@@ -5,26 +5,26 @@ import { postPet } from '../../api-calls'
 import paws from '../../images/paws.png'
 
 const Form = ({ addNewPet, setLoading, setError }) => {
-  const [petName, setPetName] = useState("");
-  const [petNickname, setPetNickname] = useState("");
-  const [petAge, setPetAge] = useState("");
-  const [petFunFact, setPetFunFact] = useState("");
-  const [petOwnersName, setPetOwnersName] = useState("");
+  const [name, setName] = useState("");
+  const [nickname, setNickname] = useState("");
+  const [age, setAge] = useState("");
+  const [funFact, setFunFact] = useState("");
+  const [ownersName, setOwnersName] = useState("");
   const [type, setType] = useState("");
 
   const submitNewPets = (e) => {
     e.preventDefault();
 
     const newPet = {
-      petName,
-      petNickname,
-      petAge,
-      petFunFact,
-      petOwnersName,
+      name,
+      nickname,
+      age,
+      funFact,
+      ownersName,
       type
     };
 
-    if (!newPet.petName || !newPet.petNickname || !newPet.petAge || !newPet.petFunFact || !newPet.petOwnersName) {
+    if (!newPet.name || !newPet.nickname || !newPet.age || !newPet.funFact || !newPet.ownersName) {
       return alert('Fill all inputs!')
     } else {
     setLoading(true)
@@ -41,11 +41,11 @@ const Form = ({ addNewPet, setLoading, setError }) => {
   };
 
   const clearInputs = () => {
-    setPetName("");
-    setPetNickname("");
-    setPetAge("");
-    setPetFunFact("");
-    setPetOwnersName("");
+    setName("");
+    setNickname("");
+    setAge("");
+    setFunFact("");
+    setOwnersName("");
     setType("");
   }
 
@@ -61,8 +61,8 @@ const Form = ({ addNewPet, setLoading, setError }) => {
               type='text'
               id='pets-name'
               name='petsName'
-              value={petName}
-              onChange={event => setPetName(event.target.value)}
+              value={name}
+              onChange={event => setName(event.target.value)}
               required
             />
           </div>
@@ -93,8 +93,8 @@ const Form = ({ addNewPet, setLoading, setError }) => {
               type='text'
               id='pets-nickname'
               name='petsNickname'
-              value={petNickname}
-              onChange={event => setPetNickname(event.target.value)}
+              value={nickname}
+              onChange={event => setNickname(event.target.value)}
               required
             />
           </div>
@@ -104,8 +104,8 @@ const Form = ({ addNewPet, setLoading, setError }) => {
               type='text'
               id='pets-age'
               name='petsAge'
-              value={petAge}
-              onChange={event => setPetAge(event.target.value)}
+              value={age}
+              onChange={event => setAge(event.target.value)}
               required
             />
           </div>
@@ -115,8 +115,8 @@ const Form = ({ addNewPet, setLoading, setError }) => {
               type='text'
               id='pets-fun-fact'
               name='petsFunFact'
-              value={petFunFact}
-              onChange={event => setPetFunFact(event.target.value)}
+              value={funFact}
+              onChange={event => setFunFact(event.target.value)}
               required
             />
           </div>
@@ -125,9 +125,9 @@ const Form = ({ addNewPet, setLoading, setError }) => {
             <input
               type='text'
               id='pet-owners-name'
-              name='petOwnersName'
-              value={petOwnersName}
-              onChange={event => setPetOwnersName(event.target.value)}
+              name='ownersName'
+              value={ownersName}
+              onChange={event => setOwnersName(event.target.value)}
               required
             />
           </div>

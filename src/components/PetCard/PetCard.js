@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import { checkIcon, checkLinkImage } from '../../utils';
 import deleteIcon from '../../images/delete.png';
 
-const PetCard = ({ id, name, owner, type }) => {
+const PetCard = ({ id, name, owner, type, deletePet }) => {
 
   return (
     <div className="pet-card">
       <div className='icon-container'>
-        <img className='delete-icon' src={deleteIcon} alt='delete icon'/>
+        <img className='delete-icon' src={deleteIcon} alt='delete icon' onClick={() => deletePet(id)}/>
       </div>
       {checkIcon(type)}
       <h2>{name}</h2>

@@ -1,7 +1,7 @@
 import PetCard from "../PetCard/PetCard";
 
-const AllPets = ({ allPets }) => {
-console.log(allPets)
+const AllPets = ({ allPets, deletePet }) => {
+
   const pets = allPets.map((pet) => {
     return <PetCard 
       key={pet.id}
@@ -12,6 +12,7 @@ console.log(allPets)
       owner={pet.ownersName}
       funFact={pet.funFact}
       type={pet.type}
+      deletePet={deletePet}
       />
   })
 
