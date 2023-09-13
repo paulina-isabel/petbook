@@ -14,7 +14,7 @@ const HomeView = ({ addNewPet, allPets, setLoading, setError }) => {
 
 export default HomeView;
 
-HomeView.PropTypes = {
+HomeView.propTypes = {
   addNewPet: PropTypes.func.isRequired,
   allPets: PropTypes.arrayOf(
     PropTypes.shape({
