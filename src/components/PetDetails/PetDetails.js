@@ -18,13 +18,15 @@ function PetDetails({ allPets }) {
         <Link to={'/'}><button className='back-to-all-pets-button'>Back to All Pets</button></Link>
       </div>
       <section className='details-container'>
-        <div className='owner-info'>
+        <div className='pet'>
+          {/* this used to be .owner-info */}
           {checkIcon(foundPet.type)}
           <h2>{foundPet.petName}</h2>
-          <p>Owner: {foundPet.petOwnersName} </p>
-        </div>
-        <div className='pet-info'>
           <h3>{foundPet.type}</h3>
+        </div>
+        <div className='details'>
+          {/* this used to be pet-info */}
+          <p>Owner: {foundPet.petOwnersName} </p>
           <p>Nickname: {foundPet.petNickname}</p>
           <p>Age: {foundPet.petAge}</p>
           <p>Fun Facts: {foundPet.petFunFact}</p>
