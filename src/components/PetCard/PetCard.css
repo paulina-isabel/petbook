@@ -26,6 +26,7 @@
   margin: 0px;
 }
 
+.pet-card h3, 
 .pet-card p {
   font-size: 15px;
 }

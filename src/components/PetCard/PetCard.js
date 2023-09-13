@@ -8,7 +8,7 @@ const PetCard = ({ id, name, owner, type }) => {
     <div className="pet-card">
       {checkIcon(type)}
       <h2>{name}</h2>
-      {/* <h3>{type}</h3> */}
+      <h3>{type}</h3>
       <p className='owner'>Owner: {owner}</p>
       <Link to={`/${id}`}>{checkLinkImage(type)}</Link>
     </div>
