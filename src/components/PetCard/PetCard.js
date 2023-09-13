@@ -1,6 +1,7 @@
 import './PetCard.css';
 import { Link } from 'react-router-dom';
 import { checkIcon, checkLinkImage } from '../../utils';
+import PropTypes from 'prop-types'
 
 const PetCard = ({ id, name, owner, type }) => {
 
@@ -16,3 +17,10 @@ const PetCard = ({ id, name, owner, type }) => {
 }
 
 export default PetCard;
+
+PetCard.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  owner: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired
+}
