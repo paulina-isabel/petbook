@@ -1,5 +1,6 @@
 import './PetDetails.css'
 import { Link, useParams } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import { checkIcon } from '../../utils';
 
 function PetDetails({ allPets }) {
@@ -34,3 +35,16 @@ function PetDetails({ allPets }) {
 };
 
 export default PetDetails;
+
+PetDetails.propTypes = {
+  allPets: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+      petName: PropTypes.string.isRequired,
+      petNickname: PropTypes.string,
+      petAge: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+      petFunFact: PropTypes.string,
+      petOwnersName: PropTypes.string.isRequired
+    })
+  )
+}
