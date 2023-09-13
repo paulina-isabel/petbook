@@ -72,6 +72,7 @@ const Form = ({ addNewPet, setLoading, setError }) => {
               type='checkbox'
               checked={type === 'Dog'}
               onChange={() => setType('Dog')}
+              value='dog'
               id='Dog'
               name='Dog'
             />
@@ -80,6 +81,7 @@ const Form = ({ addNewPet, setLoading, setError }) => {
               type='checkbox'
               checked={type === 'Cat'}
               onChange={() => setType('Cat')}
+              value='cat'
               id='Cat'
               name='Cat'
             />
