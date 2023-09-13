@@ -12,7 +12,7 @@ const App = () => {
   const [allPets, setAllPets] = useState([])
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
-  console.log('allPets', allPets)
+  
   const addNewPet = (newPet) => {
     setAllPets([...allPets, newPet])
   }
@@ -28,7 +28,7 @@ const App = () => {
     setLoading(false)
   }, [])
 
-  console.log(allPets)
+
 
   return (
     <div className="App">

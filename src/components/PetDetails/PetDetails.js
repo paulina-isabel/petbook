@@ -39,10 +39,10 @@ export default PetDetails;
 PetDetails.propTypes = {
   allPets: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+      id: PropTypes.number,
       petName: PropTypes.string.isRequired,
       petNickname: PropTypes.string,
-      petAge: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+      petAge: PropTypes.number,
       petFunFact: PropTypes.string,
       petOwnersName: PropTypes.string.isRequired
     })
