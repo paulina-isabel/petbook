@@ -10,7 +10,7 @@
 
 .pet-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   text-align: center;
   background-color: beige;
@@ -34,6 +34,19 @@
 .pet-icon{
   height: 150px;
   width: 150px;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 85%;
+}
+
+.spiral-container {
+  display: flex;
+  height: 90%;
+  margin-left: 5px;
 }
 
 .icon-container {
