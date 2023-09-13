@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { checkIcon, checkLinkImage } from '../../utils';
 import deleteIcon from '../../images/delete.png';
 import spirals from '../../images/spirals.png';
+import PropTypes from 'prop-types'
 
 const PetCard = ({ id, name, owner, type, deletePet }) => {
 
@@ -26,3 +27,10 @@ const PetCard = ({ id, name, owner, type, deletePet }) => {
 }
 
 export default PetCard;
+
+PetCard.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  owner: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired
+}

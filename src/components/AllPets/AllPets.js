@@ -1,4 +1,5 @@
 import PetCard from "../PetCard/PetCard";
+import PropTypes from 'prop-types'
 
 const AllPets = ({ allPets, deletePet }) => {
 
@@ -24,3 +25,16 @@ const AllPets = ({ allPets, deletePet }) => {
 }
 
 export default AllPets;
+
+AllPets.propTypes = {
+  allPets: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+      petName: PropTypes.string.isRequired,
+      petNickname: PropTypes.string,
+      petAge: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+      petFunFact: PropTypes.string,
+      petOwnersName: PropTypes.string.isRequired
+    })
+  )
+}
