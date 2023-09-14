@@ -9,6 +9,18 @@ const fetchPets = () => {
     })
 }
 
+const fetchPetsById = (id) => {
+    return fetch(`http://localhost:3001/api/v1/pets/${id}`)
+    .then(response => {
+        if(response.ok) {
+            console.log(response)
+            return response.json()
+        } else {
+            throw new Error('Unable to retrieve contacts from server.')
+        }
+    })
+}
+
 const postPet = (newPet) => {
     return fetch('http://localhost:3001/api/v1/pets', {
         method: 'POST', 
@@ -26,4 +38,4 @@ const postPet = (newPet) => {
     })
 }
 
-export { fetchPets, postPet }
+export { fetchPets, postPet, fetchPetsById }

@@ -2,15 +2,29 @@ import './PetDetails.css'
 import { Link, useParams } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { checkIcon } from '../../utils';
+import { fetchPetsById } from '../../api-calls'
+import { useState, useEffect } from 'react';
 
-function PetDetails({ allPets }) {
+function PetDetails() {
   const id = useParams().id;
+  console.log(id)
+  const numId = Number(id)
+  const [foundPet, setFoundPet] = useState([])
 
-  const foundPet = allPets.find((pet) => {
-      const petResult = pet.id === parseInt(id)
-      return petResult
-    }
-  );
+  // const foundPet = allPets.find((pet) => {
+      // const petResult = pet.id === parseInt(id)
+      // return petResult
+    // }
+  // );
+
+  useEffect((numId) => {
+    fetchPetsById(numId)
+    .then(data => {
+      console.log(data)
+      setFoundPet(data.pets)
+
+    })
+  }, [numId])
 
   return foundPet && (
     <article key={foundPet.id}>
