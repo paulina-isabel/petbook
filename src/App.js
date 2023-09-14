@@ -46,10 +46,10 @@ console.log(allPets)
       <Header />
       {loading && <Loading />}
       <Routes>
-        <Route path="/" element={<HomeView addNewPet={addNewPet} deletePet={deletePet} allPets={allPets} setLoading={setLoading} setError={setError}/>}/>
+        <Route path="/" element={!error ? <HomeView addNewPet={addNewPet} deletePet={deletePet} allPets={allPets} setLoading={setLoading} setError={setError}/>:<Error error={error}/>}/>
         <Route path="/:id" element={<PetDetails allPets={allPets} />}/>
       </Routes>
-      {error && <Error error={error} />}
+      {/* {error && <Error error={error} />} */}
     </div>
   );
 }
