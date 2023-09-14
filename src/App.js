@@ -12,7 +12,7 @@ const App = () => {
   const [allPets, setAllPets] = useState([])
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
-  console.log('allPets', allPets)
+  
   const addNewPet = (newPet) => {
     setAllPets([...allPets, newPet])
   }
@@ -40,7 +40,6 @@ console.log(allPets)
     .catch(error => setError(`Request failed - ${error.message}`))
     setLoading(false)
   }, [])
-
 
   return (
     <div className="App">
