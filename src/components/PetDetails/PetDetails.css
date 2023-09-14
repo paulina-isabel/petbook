@@ -23,7 +23,7 @@ article {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1rem
+  margin: 1rem;
 }
 
 .owner-info p {

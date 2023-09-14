@@ -20,14 +20,14 @@ function PetDetails({ allPets }) {
       <section className='details-container'>
         <div className='owner-info'>
           {checkIcon(foundPet.type)}
-          <h2>{foundPet.petName}</h2>
-          <p>Owner: {foundPet.petOwnersName} </p>
+          <h2>{foundPet.name}</h2>
+          <p>Owner: {foundPet.ownersName} </p>
         </div>
         <div className='pet-info'>
           <h3>{foundPet.type}</h3>
-          <p>Nickname: {foundPet.petNickname}</p>
-          <p>Age: {foundPet.petAge}</p>
-          <p>Fun Facts: {foundPet.petFunFact}</p>
+          <p>Nickname: {foundPet.nickname}</p>
+          <p>Age: {foundPet.age}</p>
+          <p>Fun Facts: {foundPet.funFact}</p>
         </div>
       </section>
     </article>
