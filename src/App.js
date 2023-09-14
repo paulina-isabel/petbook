@@ -48,6 +48,7 @@ console.log(allPets)
       <Routes>
         <Route path="/" element={!error ? <HomeView addNewPet={addNewPet} deletePet={deletePet} allPets={allPets} setLoading={setLoading} setError={setError}/>:<Error error={error}/>}/>
         <Route path="/:id" element={<PetDetails allPets={allPets} />}/>
+        <Route path='*' element={<Error error={error}/>}/>
       </Routes>
       {/* {error && <Error error={error} />} */}
     </div>
