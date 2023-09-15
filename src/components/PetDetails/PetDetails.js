@@ -18,7 +18,8 @@ function PetDetails({ allPets }) {
         <Link to={'/'}><button className='back-to-all-pets-button'>Back to All Pets</button></Link>
       </div>
       <section className='details-container'>
-        <div className='owner-info'>
+        <div className='pet'>
+          {/* this used to be .owner-info */}
           {checkIcon(foundPet.type)}
           <h2>{foundPet.name}</h2>
           <p>Owner: {foundPet.ownersName} </p>
