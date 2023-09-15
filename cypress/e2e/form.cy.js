@@ -33,7 +33,7 @@ describe('test form', () => {
     cy.get('.pets-fun-fact-section > label').contains('Pets Fun Fact:')
     cy.get('#pets-fun-fact').get('input[name="petsFunFact"]').type('Very Fun')
     cy.get('.pet-owners-name-section > label').contains('Pet Owners Name:')
-    cy.get('#pet-owners-name').get('input[name="petOwnersName"]').type('Alice')
+    cy.get('#pet-owners-name').get('input[name="ownersName"]').type('Alice')
     cy.get('button')
     .click()
     .get('.all-pets-container').children().should('have.length', 5)
