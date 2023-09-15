@@ -8,18 +8,18 @@ describe('template spec', () => {
   })
 
   it('Should select pet and be shown pet details for that pet', () => {
-    cy.get('.pet-card').get('a').click()
+    cy.url().should('eq', 'http://localhost:3000/')
+    cy.get('.pet-card').get('.detail-link-icon').click()
     cy.url().should('eq', 'http://localhost:3000/2')
-    cy.get('.details-container').get('.owner-info')
-      .get('.owner-info').contains('Owner Name: Alex')
-      .get('.owner-info').contains('Owner Details:')
-      .get('.owner-info').find('.pet-image[alt="cat"]')
+    cy.get('.details-container').get('.pet')
+      .get('.details').contains('Owner: Alex')
+      .get('.pet').find('.pet-icon[alt="Dog Icon"]')
 
-    cy.get('.details-container').get('.owner-info')
-      .get('.pet-info').contains('Pet Name: Duke')
-      .get('.pet-info').contains('Nickname: Doodle-bee')
-      .get('.pet-info').contains('Pet Age: 19')
-      .get('.pet-info').contains('Fun Facts: He likes to go for car rides')
+    cy.get('.details-container')
+      .get('.pet').contains('Duke')
+      .get('.details').contains('Nickname: Doodle-bee')
+      .get('.details').contains('Age: 19')
+      .get('.details').contains('Fun Facts: He likes to go for car rides')
   })
 
   it('Should return home to all pets on button click', () => {
@@ -28,5 +28,4 @@ describe('template spec', () => {
     cy.get('.back-to-all-pets-button').click()
     cy.url().should('eq', 'http://localhost:3000/')
   })
-  
 })
