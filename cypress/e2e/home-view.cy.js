@@ -18,12 +18,19 @@ describe('template spec', () => {
   it('should delete pet card', () => {
     cy.get('.delete-icon')
       .should('have.attr', 'alt')
-      // .click('img')
   })
-  it('should display pets name and owners name', () => {
+  it('should display card', () => {
+    cy.get(':nth-child(1) > .info-container > .pet-icon')
+      .should('have.attr', 'alt')
     cy.get(':nth-child(1) > .info-container > h2')
       .should('contain', 'Oreo')
+    cy.get(':nth-child(1) > .info-container > h3')
+      .should('contain', 'Cat')
     cy.get(':nth-child(1) > .info-container > .owner')
       .should('contain', 'Owner: Judy')
+  })
+  it('should take you to pet details when link is clicked', () => {
+    cy.get(':nth-child(1) > .info-container > a > .detail-link-icon').first().click()
+      .url().should('eq', 'http://localhost:3000/1')
   })
 })
