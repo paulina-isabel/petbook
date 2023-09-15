@@ -26,4 +26,15 @@ const postPet = (newPet) => {
     })
 }
 
-export { fetchPets, postPet }
+const fetchPetsById = (id) => {
+    return fetch(`http://localhost:3001/api/v1/pets/${id}`)
+    .then(response => {
+        if(response.ok) {
+            return response.json()
+        } else {
+            throw new Error('Unable to retrieve contacts from server.')
+        }
+    })
+}
+
+export { fetchPets, postPet, fetchPetsById }
