@@ -2,18 +2,30 @@ import './PetDetails.css'
 import { Link, useParams } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { checkIcon } from '../../utils';
-import Error from '../Error/Error';
+import { fetchPetsById } from '../../api-calls';
+import { useEffect, useState } from 'react';
 
-function PetDetails({ allPets}) {
+function PetDetails({ setError}) {
   const id = useParams().id;
-  
-  const foundPet = allPets.find((pet) => {
-      const petResult = pet.id === parseInt(id)
-      return petResult
-    }
-  );
+  const [foundPet, setFoundPet] = useState({})
 
-  return foundPet ? (
+  // console.log(error)
+  // const foundPet = allPets.find((pet) => {
+  //     const petResult = pet.id === parseInt(id)
+  //     console.log('petResult', petResult)
+  //     return petResult
+  //   }
+  // );
+
+  useEffect(() => {
+    fetchPetsById(id)
+    .then(data => {
+      setFoundPet(data)
+    })
+    .catch(err => setError(`${err.message}`))
+  }, [])
+  
+  return Object.values(foundPet).length > 0 && (
     <article key={foundPet.id}>
       <div className='back-to-all-pets-button-container'>
         <Link to={'/'}><button className='back-to-all-pets-button'>Back to All Pets</button></Link>
@@ -32,12 +44,7 @@ function PetDetails({ allPets}) {
         </div>
       </section>
     </article>
-  ) : (
-        <div>
-          <h2>Nothing to see here</h2>
-          <Error />  
-        </div>
-      );
+  ) 
 };
 
 export default PetDetails;
