@@ -5,6 +5,8 @@
   width: 20%;
   border-radius: 8%;
   margin-left: 20px;
+  margin-top: 28px;
+  margin-bottom: 15px;
   background-color: #E3D7FF;
   height: 42rem;
 }
@@ -23,14 +25,12 @@ p {
 .sec {
   padding: 20px;
   font-weight: bold;
-
 }
 
 .paws-image {
   padding: 20px;
   justify-content: center;
 }
-
 
 .button{
   padding: 10px 40px;
@@ -78,7 +78,6 @@ p {
   border-bottom: 1px solid white;
   margin-top: -1px;
 }
-
 
 .button:hover{
   padding: 15px 60px 15px 20px;

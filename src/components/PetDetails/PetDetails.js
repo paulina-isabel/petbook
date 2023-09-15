@@ -21,15 +21,14 @@ function PetDetails({ allPets }) {
         <div className='pet'>
           {/* this used to be .owner-info */}
           {checkIcon(foundPet.type)}
-          <h2>{foundPet.petName}</h2>
-          <h3>{foundPet.type}</h3>
+          <h2>{foundPet.name}</h2>
+          <p>Owner: {foundPet.ownersName} </p>
         </div>
-        <div className='details'>
-          {/* this used to be pet-info */}
-          <p>Owner: {foundPet.petOwnersName} </p>
-          <p>Nickname: {foundPet.petNickname}</p>
-          <p>Age: {foundPet.petAge}</p>
-          <p>Fun Facts: {foundPet.petFunFact}</p>
+        <div className='pet-info'>
+          <h3>{foundPet.type}</h3>
+          <p>Nickname: {foundPet.nickname}</p>
+          <p>Age: {foundPet.age}</p>
+          <p>Fun Facts: {foundPet.funFact}</p>
         </div>
       </section>
     </article>
@@ -41,10 +40,10 @@ export default PetDetails;
 PetDetails.propTypes = {
   allPets: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+      id: PropTypes.number,
       petName: PropTypes.string.isRequired,
       petNickname: PropTypes.string,
-      petAge: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+      petAge: PropTypes.number,
       petFunFact: PropTypes.string,
       petOwnersName: PropTypes.string.isRequired
     })

@@ -12,10 +12,23 @@ const App = () => {
   const [allPets, setAllPets] = useState([])
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
-  console.log('allPets', allPets)
+  
   const addNewPet = (newPet) => {
     setAllPets([...allPets, newPet])
   }
+
+  const deletePet = (petId) => {
+    // return fetch('http://localhost:3001/api/v1/pets', {
+      // method: 'DELETE'
+    // })
+    // .then(response => {
+      const filteredPets = allPets.filter(pet => pet.id !== petId)
+      setAllPets(filteredPets)
+    // })
+    // .catch(error => setError(error.message))
+  }
+
+console.log(allPets)
 
   useEffect(() => {
     setLoading(true)
@@ -28,14 +41,12 @@ const App = () => {
     setLoading(false)
   }, [])
 
-  console.log(allPets)
-
   return (
     <div className="App">
       <Header />
       {loading && <Loading />}
       <Routes>
-        <Route path="/" element={<HomeView addNewPet={addNewPet} allPets={allPets} setLoading={setLoading} setError={setError}/>}/>
+        <Route path="/" element={<HomeView addNewPet={addNewPet} deletePet={deletePet} allPets={allPets} setLoading={setLoading} setError={setError}/>}/>
         <Route path="/:id" element={<PetDetails allPets={allPets} />}/>
       </Routes>
       {error && <Error error={error} />}
