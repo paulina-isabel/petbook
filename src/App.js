@@ -42,16 +42,18 @@ console.log(allPets)
       setAllPets(data.pets)
       setLoading(false)
     })
-    .catch(error => setError(`Request failed - ${error.message}`))
-    setLoading(false)
+    .catch(error => {
+      setError(`Request failed - ${error.message}`)
+      setLoading(false)
+    })
   }, [])
 
   return (
     <div className="App">
       <Header />
-      {loading && <Loading />}
+      {loading && <Loading loading={loading}/>}
       <Routes>
-        <Route path="/" element={!error && <HomeView addNewPet={addNewPet} deletePet={deletePet} allPets={allPets} setLoading={setLoading} setError={setError}/>}/>
+        <Route path="/" element={!error && !loading && <HomeView addNewPet={addNewPet} deletePet={deletePet} allPets={allPets} setLoading={setLoading} setError={setError}/>}/>
         <Route path="/:id" element={<PetDetails allPets={allPets} setError={setError}/>}/>
         <Route path='*' element={<Error error={error}/>}/>
       </Routes>
