@@ -1,6 +1,6 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { fetchPets } from './api-calls';
 import HomeView from './components/HomeView/HomeView';
 import Header from './components/Header/Header';
@@ -12,7 +12,12 @@ const App = () => {
   const [allPets, setAllPets] = useState([])
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+  const location = useLocation().pathname
   
+  useEffect(() => {
+    setError('')
+  }, [location])
+
   const addNewPet = (newPet) => {
     setAllPets([...allPets, newPet])
   }
@@ -46,8 +51,9 @@ console.log(allPets)
       <Header />
       {loading && <Loading />}
       <Routes>
-        <Route path="/" element={<HomeView addNewPet={addNewPet} deletePet={deletePet} allPets={allPets} setLoading={setLoading} setError={setError}/>}/>
-        <Route path="/:id" element={<PetDetails allPets={allPets} />}/>
+        <Route path="/" element={!error && <HomeView addNewPet={addNewPet} deletePet={deletePet} allPets={allPets} setLoading={setLoading} setError={setError}/>}/>
+        <Route path="/:id" element={<PetDetails allPets={allPets} setError={setError}/>}/>
+        <Route path='*' element={<Error error={error}/>}/>
       </Routes>
       {error && <Error error={error} />}
     </div>
