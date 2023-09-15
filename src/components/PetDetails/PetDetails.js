@@ -1,4 +1,5 @@
 import './PetDetails.css'
+import spirals from '../../images/spirals.png'
 import { Link, useParams } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { checkIcon } from '../../utils';
@@ -31,14 +32,16 @@ function PetDetails({ setError}) {
         <Link to={'/'}><button className='back-to-all-pets-button'>Back to All Pets</button></Link>
       </div>
       <section className='details-container'>
+      <div className='spirals-container'>
+        <img className='spirals' src={spirals} alt='spiral styling'/>
+      </div>
         <div className='pet'>
-          {/* this used to be .owner-info */}
-          {checkIcon(foundPet.type)}
+          <div className='pet-image'>{checkIcon(foundPet.type)}</div>
           <h2>{foundPet.name}</h2>
           <p>Owner: {foundPet.ownersName} </p>
         </div>
         <div className='pet-info'>
-          <h3>{foundPet.type}</h3>
+          <h2 className='pet-type'>{foundPet.type}</h2>
           <p>Nickname: {foundPet.nickname}</p>
           <p>Age: {foundPet.age}</p>
           <p>Fun Facts: {foundPet.funFact}</p>

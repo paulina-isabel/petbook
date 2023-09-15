@@ -13,8 +13,9 @@ article {
 
 .details-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   border: 3px solid #333333;
+  border-radius: 15px;
   background: white;
   margin: 5rem
 }
@@ -22,30 +23,37 @@ article {
 .pet {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 1rem;
+  width: 15em;
+  justify-content: space-evenly;
 }
 
-.pet p {
+.pet h2, .pet p {
   background: #ffe8cf;
   padding: 1em
 }
 
-.details p {
+.pet-type {
+  font-size: 2em;
+  margin: .5rem 0
+}
+.pet-info p {
   background: #ffe8cf;
-  padding: 1em
+  padding: 1em;
+  justify-content: flex-start;
 }
 
-.details {
+.pet-info {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  width: 40em
 }
 
 .pet-image {
   border: .5em solid #72788D;
   border-radius: 10px;
   height: 10em;
-  width: 10em;
+  width: 14em;
 }
 
 .back-to-all-pets-button-container {
@@ -75,4 +83,202 @@ article {
 
 .back-to-all-pets-button:hover{
   padding: 15px 20px ;
+}
+
+.spirals-container {
+  margin: 1rem 0;
+}
+
+@media screen and (max-width: 1350px) {
+  .back-to-all-pets-button-container {
+    margin-right: 55rem;
+  }
+}
+
+@media screen and (max-width: 1225px) {
+  .back-to-all-pets-button-container {
+    margin-right: 50rem;
+  }
+    .details-container {
+    display: flex;
+    justify-content: space-around;
+    border: 3px solid #333333;
+    border-radius: 15px;
+    background: white;
+    margin: 3rem
+  }
+}
+
+@media screen and (max-width: 1090px) {
+  .back-to-all-pets-button-container {
+    margin-right: 43rem;
+  }
+
+  .details-container {
+    display: flex;
+    justify-content: space-around;
+    border: 3px solid #333333;
+    border-radius: 15px;
+    background: white;
+    margin: 2.5rem
+  }
+}
+
+
+@media screen and (max-width: 1030px) {
+  .back-to-all-pets-button-container {
+    margin-right: 39rem;
+  }
+
+  .details-container {
+    display: flex;
+    justify-content: space-around;
+    border: 3px solid #333333;
+    border-radius: 15px;
+    background: white;
+    margin: 2rem
+  }
+
+  .pet {
+    display: flex;
+    flex-direction: column;
+    width: 15em;
+    justify-content: space-evenly;
+  }
+
+  .pet-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 23em
+  }
+}
+
+@media screen and (max-width: 825px) {
+  .back-to-all-pets-button-container {
+    margin-right: 29rem;
+  }
+
+  .details-container {
+    display: flex;
+    justify-content: space-around;
+    border: 3px solid #333333;
+    border-radius: 15px;
+    background: white;
+    margin: 1.5rem
+  }
+
+  .pet {
+    display: flex;
+    flex-direction: column;
+    width: 15em;
+    justify-content: space-evenly;
+  }
+
+  .pet-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 23em
+  }
+  .spirals-container {
+    margin: 1rem -.5rem
+  }
+  
+  .pet-image {
+    border: .5em solid #72788D;
+    border-radius: 10px;
+    height: 9em;
+    width: 13.5em;
+  }
+  .pet h2, .pet p {
+    background: #ffe8cf;
+    padding: .7em;
+    font-size: 1.4em;
+  }
+  
+  .pet-type {
+    font-size: 1.8em;
+    margin: .3rem 0
+  }
+  .pet-info p {
+    background: #ffe8cf;
+    padding: .9em;
+    justify-content: flex-start;
+    font-size: 1.4em;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .back-to-all-pets-button-container {
+    margin-right: 26rem;
+  }
+    .details-container {
+    display: flex;
+    justify-content: space-around;
+    border: 3px solid #333333;
+    border-radius: 15px;
+    background: white;
+    margin: 1rem;
+    padding: 1em
+  }
+
+  .spirals-container {
+    display: none;
+  }
+}
+@media screen and (max-width: 680px) {
+  .back-to-all-pets-button-container {
+    margin-right: 18rem;
+    padding: 0 .5rem
+  }
+    .details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid #333333;
+    border-radius: 15px;
+    background: white;
+    margin: .5rem;
+    padding: .5em
+  }
+
+  .spirals-container {
+    display: none;
+  }
+  
+  .pet div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1.1rem
+  }
+
+  .pet-image {
+    border: .5em solid #72788D;
+    border-radius: 10px;
+    height: 10em;
+    width: 12em;
+    
+  }
+  .pet h2, .pet p {
+    background: #ffe8cf;
+    padding: .4em;
+    font-size: 1.4em;
+  }
+  
+  .pet-type {
+    font-size: 1.5em;
+  }
+
+  .pet-info p {
+    display: flex;
+    flex-direction: column;
+    background: #ffe8cf;
+    padding: .7em;
+    font-size: 1.4em;
+    justify-content: center;
+    margin: .5em
+  }
 }
