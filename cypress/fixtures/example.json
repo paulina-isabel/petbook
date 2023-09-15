@@ -1,36 +1,40 @@
 {
   "pets": [
   {
-  "id": "1",
-  "petName": "Oreo",
-  "petNickname": "Oreo",
-  "petAge": "2.5",
-  "petFunFact": "hes had 2 types of tape worms",
-  "petOwnersName": "Judy"
+  "id": 1,
+  "name": "Oreo",
+  "nickname": "Oreo",
+  "age": 2.5,
+  "funFact": "hes had 2 types of tape worms",
+  "ownersName": "Judy",
+  "type": "Cat"
   },
   {
-  "id": "2",
-  "petName": "Duke",
-  "petNickname": "Doodle-bee",
-  "petAge": "19",
-  "petFunFact": "He likes to go for car rides",
-  "petOwnersName": "Alex"
+  "id": 2,
+  "name": "Duke",
+  "nickname": "Doodle-bee",
+  "age": 19,
+  "funFact": "He likes to go for car rides",
+  "ownersName": "Alex",
+  "type": "Dog"
   },
   {
-  "id": "3",
-  "petName": "Pluto",
-  "petNickname": "Pluto",
-  "petAge": "1",
-  "petFunFact": "hes really fun",
-  "petOwnersName": "Paulina"
+  "id": 3,
+  "name": "Pluto",
+  "nickname": "Pluto",
+  "age": 1,
+  "funFact": "hes really fun",
+  "ownersName": "Paulina",
+  "type": "Cat"
   },
   {
-  "id": "4",
-  "petName": "Rocco",
-  "petNickname": "Rocco",
-  "petAge": "1",
-  "petFunFact": "hes really really fun",
-  "petOwnersName": "Alice"
+  "id": 4,
+  "name": "Rocco",
+  "nickname": "Rocco",
+  "age": 1,
+  "funFact": "hes really really fun",
+  "ownersName": "Alice",
+  "type": "Dog"
   }
   ]
   }
