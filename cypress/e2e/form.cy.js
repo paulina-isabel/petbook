@@ -10,12 +10,12 @@ describe('test form', () => {
     cy.intercept('POST', 'http://localhost:3001/api/v1/pets', {
       statusCode: 200,
       body: {
-        petsName: 'Rocco',
+        name: 'Rocco',
         type: 'Dog',
-        petsNickname: 'Rock',
-        petsAge: '3',
-        petsFunFact: 'Very Fun',
-        petOwnersName: 'Alice'
+        nickname: 'Rock',
+        age: 3,
+        funFact: 'Very Fun',
+        ownersName: 'Alice'
       }
     })
     cy.visit('http://localhost:3000')
