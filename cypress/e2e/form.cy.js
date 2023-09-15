@@ -10,12 +10,12 @@ describe('test form', () => {
     cy.intercept('POST', 'http://localhost:3001/api/v1/pets', {
       statusCode: 200,
       body: {
-        petsName: 'Rocco',
+        name: 'Rocco',
         type: 'Dog',
-        petsNickname: 'Rock',
-        petsAge: '3',
-        petsFunFact: 'Very Fun',
-        petOwnersName: 'Alice'
+        nickname: 'Rock',
+        age: 3,
+        funFact: 'Very Fun',
+        ownersName: 'Alice'
       }
     })
     cy.visit('http://localhost:3000')
@@ -33,7 +33,7 @@ describe('test form', () => {
     cy.get('.pets-fun-fact-section > label').contains('Pets Fun Fact:')
     cy.get('#pets-fun-fact').get('input[name="petsFunFact"]').type('Very Fun')
     cy.get('.pet-owners-name-section > label').contains('Pet Owners Name:')
-    cy.get('#pet-owners-name').get('input[name="petOwnersName"]').type('Alice')
+    cy.get('#pet-owners-name').get('input[name="ownersName"]').type('Alice')
     cy.get('button')
     .click()
     .get('.all-pets-container').children().should('have.length', 5)
