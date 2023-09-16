@@ -45,11 +45,11 @@ describe('Should test single pet details page', () => {
       cy.get('.error > h2').contains('Request failed - Unable to retrieve contacts from server.')    
   })
 
-    it('Should display URL error page with a 404 level error', () => {
-      cy.visit('http://localhost:3000/nonsense')
-      cy.url().should('eq', 'http://localhost:3000/nonsense')
-      cy.get('.error > h2').contains('Unable to retrieve contacts from server.')    
-      cy.get('.error-button').click()
-      cy.url().should('eq', 'http://localhost:3000/')
-      })
+ it('Should display URL error page with a 404 level error', () => {
+   cy.visit('http://localhost:3000/nonsense')
+   cy.url().should('eq', 'http://localhost:3000/nonsense')
+   cy.get('.error > h2').contains('Unable to retrieve contacts from server.')    
+   cy.get('.error-button').click()
+   cy.url().should('eq', 'http://localhost:3000/')
+   })
 })
