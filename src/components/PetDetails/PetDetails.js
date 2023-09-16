@@ -10,21 +10,13 @@ function PetDetails({ setError}) {
   const id = useParams().id;
   const [foundPet, setFoundPet] = useState({})
 
-  // console.log(error)
-  // const foundPet = allPets.find((pet) => {
-  //     const petResult = pet.id === parseInt(id)
-  //     console.log('petResult', petResult)
-  //     return petResult
-  //   }
-  // );
-
   useEffect(() => {
     fetchPetsById(id)
     .then(data => {
       setFoundPet(data)
     })
     .catch(err => setError(`${err.message}`))
-  }, [])
+  }, [id, setError])
   
   return Object.values(foundPet).length > 0 && (
     <article key={foundPet.id}>
