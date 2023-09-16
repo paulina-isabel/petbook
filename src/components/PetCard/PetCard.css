@@ -51,7 +51,7 @@
 
 .icon-container {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   width: 100%;
   padding-right: 5px;
   padding-top: 5px;

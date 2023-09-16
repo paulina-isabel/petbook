@@ -6,7 +6,7 @@ const Error = ({error}) => {
   return (
     <section className='error'>
       <h2>{error}</h2>
-      <img src={shockedCat}/>
+      <img src={shockedCat} alt='shocked error cat'/>
       <Link to='/'><button className='error-button'>Retry</button></Link>
     </section>
   )

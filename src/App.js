@@ -22,16 +22,23 @@ const App = () => {
     setAllPets([...allPets, newPet])
   }
 
-  const deletePet = (petId) => {
-    // return fetch('http://localhost:3001/api/v1/pets', {
-      // method: 'DELETE'
-    // })
-    // .then(response => {
-      const filteredPets = allPets.filter(pet => pet.id !== petId)
-      setAllPets(filteredPets)
-    // })
-    // .catch(error => setError(error.message))
-  }
+  const deletePet = async (petId) => {
+    try {
+      const response = await fetch(`http://localhost:3001/api/v1/pets/${petId}`, {
+        method: 'DELETE'
+      });
+  
+      if (response.ok) {
+        const updatedPets = allPets.filter(pet => pet.id !== petId);
+        setAllPets(updatedPets);
+      } else {
+        console.log('fail', response.status);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setError(error.message);
+    }
+  };
 
   useEffect(() => {
     setLoading(true)
@@ -40,16 +47,18 @@ const App = () => {
       setAllPets(data.pets)
       setLoading(false)
     })
-    .catch(error => setError(`Request failed - ${error.message}`))
-    setLoading(false)
+    .catch(error => {
+      setError(`Request failed - ${error.message}`)
+      setLoading(false)
+    })
   }, [])
 
   return (
     <div className="App">
       <Header />
-      {loading && <Loading />}
+      {loading && <Loading loading={loading}/>}
       <Routes>
-        <Route path="/" element={!error && <HomeView addNewPet={addNewPet} deletePet={deletePet} allPets={allPets} setLoading={setLoading} setError={setError}/>}/>
+        <Route path="/" element={!error && !loading && <HomeView addNewPet={addNewPet} deletePet={deletePet} allPets={allPets} setLoading={setLoading} setError={setError}/>}/>
         <Route path="/:id" element={<PetDetails allPets={allPets} setError={setError}/>}/>
         <Route path='*' element={<Error error={error}/>}/>
       </Routes>
