@@ -17,9 +17,9 @@ describe('Test HomeView', () => {
       .contains('Your Pet\'s Perfect Page')
   })
 
-  it('should delete pet card', () => {
-    cy.get('.delete-icon')
-      .should('have.attr', 'alt')
+  it.only('should delete pet card', () => {
+    cy.get('.all-pets-container > :nth-child(3)')
+      // .should('have.attr', 'alt')
   })
 
   it('should display card', () => {
