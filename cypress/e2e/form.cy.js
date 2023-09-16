@@ -1,4 +1,4 @@
-describe('test form', () => {
+describe('Test Form Functionality', () => {
   beforeEach(() => {
     cy.intercept('GET', 'http://localhost:3001/api/v1/pets', {
       statusCode: 200,
@@ -6,6 +6,7 @@ describe('test form', () => {
     })
     .visit('http://localhost:3000')
   })
+  
   it('passes', () => {
     cy.intercept('POST', 'http://localhost:3001/api/v1/pets', {
       statusCode: 200,
