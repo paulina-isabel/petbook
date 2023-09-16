@@ -19,7 +19,6 @@ function PetDetails({ setError }) {
     .catch(error => {
       setError(`Request failed - ${error.message}`)
     })
-    // .catch(err => setError(`${err.message}`))
   }, [id, setError])
   
   return Object.values(foundPet).length > 0 && (

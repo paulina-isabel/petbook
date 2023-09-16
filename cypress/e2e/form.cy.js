@@ -48,11 +48,14 @@ describe('Test Form Functionality', () => {
       cy.get('.error > h2').contains('Request failed - Unable to retrieve contacts from server.')    
   })
 
- it('Should display URL error page with a 404 level error', () => {
-   cy.visit('http://localhost:3000/nonsense')
-   cy.url().should('eq', 'http://localhost:3000/nonsense')
-   cy.get('.error > h2').contains('Unable to retrieve contacts from server.')    
-   cy.get('.error-button').click()
-   cy.url().should('eq', 'http://localhost:3000/')
-   })
+   it('Should display URL error page with a 404 level error', () => {
+    cy.intercept('GET', 'http://localhost:3001/api/v1/pets/nonsense', {
+      statusCode: 404})
+      
+     cy.visit('http://localhost:3000/nonsense')
+     cy.url().should('eq', 'http://localhost:3000/nonsense')
+     cy.get('.error > h2').contains('Unable to retrieve contacts from server.')    
+     cy.get('.error-button').click()
+     cy.url().should('eq', 'http://localhost:3000/')
+     })
 })

@@ -1,5 +1,5 @@
 const fetchPets = () => {
-    return fetch('http://localhost:3001/api/v1/pets')
+    return fetch('https://petbook-be-git-refactor-edit-server-name-aliceabarca.vercel.app/api/v1/pets')
     .then(response => {
         if(response.ok) {
             return response.json()
@@ -10,7 +10,7 @@ const fetchPets = () => {
 }
 
 const postPet = (newPet) => {
-    return fetch('http://localhost:3001/api/v1/pets', {
+    return fetch('https://petbook-be-git-refactor-edit-server-name-aliceabarca.vercel.app/api/v1/pets', {
         method: 'POST', 
         headers: {
             'Content-Type': 'application/json'
@@ -27,7 +27,7 @@ const postPet = (newPet) => {
 }
 
 const fetchPetsById = (id) => {
-    return fetch(`http://localhost:3001/api/v1/pets/${id}`)
+    return fetch(`https://petbook-be-git-refactor-edit-server-name-aliceabarca.vercel.app/api/v1/pets/${id}`)
     .then(response => {
         if(response.ok) {
             return response.json()
