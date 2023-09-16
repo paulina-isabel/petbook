@@ -1,7 +1,7 @@
 import './PetDetails.css'
 import spirals from '../../images/spirals.png'
 import { Link, useParams } from 'react-router-dom'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import { checkIcon } from '../../utils';
 import { fetchPetsById } from '../../api-calls';
 import { useEffect, useState } from 'react';
@@ -27,9 +27,7 @@ function PetDetails({ setError}) {
     .catch(err => setError(`${err.message}`))
   }, [])
   
-  console.log(foundPet)
   return Object.values(foundPet).length > 0 && (
-  // return (
     <article key={foundPet.id}>
       <div className='back-to-all-pets-button-container'>
         <Link to={'/'}><button className='back-to-all-pets-button'>Back to All Pets</button></Link>
@@ -56,15 +54,15 @@ function PetDetails({ setError}) {
 
 export default PetDetails;
 
-// PetDetails.propTypes = {
-  // allPets: PropTypes.arrayOf(
-    // PropTypes.shape({
-      // id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-      // petName: PropTypes.string.isRequired,
-      // petNickname: PropTypes.string,
-      // petAge: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-      // petFunFact: PropTypes.string,
-      // petOwnersName: PropTypes.string.isRequired
-    // })
-  // )
-// }
+PetDetails.propTypes = {
+  allPets: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+      petName: PropTypes.string.isRequired,
+      petNickname: PropTypes.string,
+      petAge: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+      petFunFact: PropTypes.string,
+      petOwnersName: PropTypes.string.isRequired
+    })
+  )
+}

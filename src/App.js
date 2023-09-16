@@ -33,8 +33,6 @@ const App = () => {
     // .catch(error => setError(error.message))
   }
 
-console.log(allPets)
-
   useEffect(() => {
     setLoading(true)
     fetchPets()

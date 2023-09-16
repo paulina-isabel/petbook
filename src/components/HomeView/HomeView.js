@@ -19,11 +19,11 @@ HomeView.propTypes = {
   allPets: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
-      petName: PropTypes.string.isRequired,
-      petNickname: PropTypes.string,
-      petAge: PropTypes.number,
-      petFunFact: PropTypes.string,
-      petOwnersName: PropTypes.string.isRequired
+      name: PropTypes.string.isRequired,
+      nickname: PropTypes.string,
+      age: PropTypes.number,
+      funFact: PropTypes.string,
+      ownersName: PropTypes.string.isRequired
     })
   ), 
   setLoading: PropTypes.func.isRequired,
