@@ -21,13 +21,13 @@ describe('Test HomeView', () => {
     cy.intercept('DELETE', 'http://localhost:3001/api/v1/pets/3', {
       statusCode: 204
     }).as('deleteRequest');
-
     cy.get('.all-pets-container').find('.pet-card').should('have.length', 4)
     cy.get('.all-pets-container > :nth-child(3)')
       .get(':nth-child(3) > .info-container > .icon-container > .delete-icon').click();
-
     cy.wait('@deleteRequest');
-  })
+    cy.get('.all-pets-container').find('.pet-card').should('have.length', 3);
+  });
+
 
   it('should display card', () => {
     cy.get(':nth-child(1) > .info-container > .pet-icon')
