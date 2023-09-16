@@ -5,9 +5,9 @@ describe('Test Form Functionality', () => {
       fixture: 'allPets.json'
     })
     .visit('http://localhost:3000')
-  })
+  });
   
-  it('passes', () => {
+  it('Should post a new pet', () => {
     cy.intercept('POST', 'http://localhost:3001/api/v1/pets', {
       statusCode: 200,
       body: {
@@ -35,24 +35,27 @@ describe('Test Form Functionality', () => {
     cy.get('#pets-fun-fact').get('input[name="petsFunFact"]').type('Very Fun')
     cy.get('.pet-owners-name-section > label').contains('Pet Owners Name:')
     cy.get('#pet-owners-name').get('input[name="ownersName"]').type('Alice')
-    cy.get('button')
-    .click()
-    .get('.all-pets-container').children().should('have.length', 5)
+    cy.get('button').click()
+      .get('.all-pets-container').children().should('have.length', 5)
     cy.get('.all-pets-container').last().contains('h2', 'Rocco')
     cy.get('.all-pets-container').last().contains('p', 'Alice')
-  })
+  });
 
   it('Should display error message with a 500 level error', () => {
     cy.intercept('GET', 'http://localhost:3001/api/v1/pets', {
       statusCode: 500})
-      cy.get('.error > h2').contains('Request failed - Unable to retrieve contacts from server.')    
-  })
+    cy.get('.error > h2').contains('Request failed - Unable to retrieve contacts from server.')    
+  });
 
- it('Should display URL error page with a 404 level error', () => {
-   cy.visit('http://localhost:3000/nonsense')
-   cy.url().should('eq', 'http://localhost:3000/nonsense')
-   cy.get('.error > h2').contains('Unable to retrieve contacts from server.')    
-   cy.get('.error-button').click()
-   cy.url().should('eq', 'http://localhost:3000/')
-   })
-})
+
+  it('Should display URL error page with a 404 level error', () => {
+    cy.intercept('GET', 'http://localhost:3001/api/v1/pets/nonsense', {
+      statusCode: 404
+    })  
+    cy.visit('http://localhost:3000/nonsense')
+    cy.url().should('eq', 'http://localhost:3000/nonsense')
+    cy.get('.error > h2').contains('Unable to retrieve contacts from server.')    
+    cy.get('.error-button').click()
+    cy.url().should('eq', 'http://localhost:3000/')
+  });
+});
