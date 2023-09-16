@@ -35,8 +35,8 @@ const App = () => {
         console.log('fail', response.status);
       }
     } catch (error) {
-      console.error('Error:', error);
-      setError(error.message);
+      // console.error('Error:', error);
+      setError(`Request failed - ${error.message}`)
     }
   };
 

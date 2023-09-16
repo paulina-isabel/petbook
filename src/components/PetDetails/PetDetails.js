@@ -6,7 +6,7 @@ import { checkIcon } from '../../utils';
 import { fetchPetsById } from '../../api-calls';
 import { useEffect, useState } from 'react';
 
-function PetDetails({ setError}) {
+function PetDetails({ setError }) {
   const id = useParams().id;
   const [foundPet, setFoundPet] = useState({})
 
@@ -16,7 +16,10 @@ function PetDetails({ setError}) {
       setFoundPet(data)
       
     })
-    .catch(err => setError(`${err.message}`))
+    .catch(error => {
+      setError(`Request failed - ${error.message}`)
+    })
+    // .catch(err => setError(`${err.message}`))
   }, [id, setError])
   
   return Object.values(foundPet).length > 0 && (

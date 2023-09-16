@@ -32,8 +32,14 @@ describe('Should test single pet details page', () => {
   })
 
   it('Should return home to all pets on button click', () => {
-    cy.visit('http://localhost:3000/2')
-    cy.url().should('eq', 'http://localhost:3000/2')
+    cy.intercept('GET', `http://localhost:3001/api/v1/pets/1`,{
+      statusCode: 200,
+      fixture: 'singlePet.json'
+    }).as('check')
+
+    cy.visit('http://localhost:3000/1')
+    cy.url().should('eq', 'http://localhost:3000/1')
+    cy.wait('@check')
     cy.get('.back-to-all-pets-button')
     .click()
     cy.url().should('eq', 'http://localhost:3000/')
@@ -46,6 +52,9 @@ describe('Should test single pet details page', () => {
   })
 
  it('Should display URL error page with a 404 level error', () => {
+  cy.intercept('GET', 'http://localhost:3001/api/v1/pets/nonsense', {
+    statusCode: 404})
+    
    cy.visit('http://localhost:3000/nonsense')
    cy.url().should('eq', 'http://localhost:3000/nonsense')
    cy.get('.error > h2').contains('Unable to retrieve contacts from server.')    
