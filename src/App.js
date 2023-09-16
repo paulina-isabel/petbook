@@ -23,17 +23,22 @@ const App = () => {
   }
 
   const deletePet = (petId) => {
-    return fetch('http://localhost:3001/api/v1/pets', {
+    return fetch(`http://localhost:3001/api/v1/pets/${petId}`, {
       method: 'DELETE'
     })
     .then(response => {
-      const filteredPets = allPets.filter(pet => pet.id !== petId)
-      setAllPets(filteredPets)
+      if (response.ok) {
+        console.log(response, 'this is response in the deletePet')
+        const updatedPets = allPets.filter(pet => pet.id !== petId)
+        setAllPets(updatedPets)
+      } else {
+        console.log('fail', response.status)
+      }
     })
     .catch(error => setError(error.message))
   }
 
-console.log(allPets)
+  console.log(allPets)
 
   useEffect(() => {
     setLoading(true)
