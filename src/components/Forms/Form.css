@@ -112,3 +112,21 @@ p {
     padding-right: 10px;
   }
 }
+
+@media screen and (max-width: 524px) {
+  .paws-image {
+    width: 0px;
+  }
+}
+
+@media screen and (max-width: 431px) {
+    p {
+      font-size: 20px;
+    }
+
+    .form-section {
+      height: 15rem;
+      overflow-y: scroll;
+      margin-left: 55px;
+    }
+}
