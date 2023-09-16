@@ -24,7 +24,7 @@ const App = () => {
 
   const deletePet = async (petId) => {
     try {
-      const response = await fetch(`http://localhost:3001/api/v1/pets/${petId}`, {
+      const response = await fetch(`https://petbook-be-git-refactor-edit-server-name-aliceabarca.vercel.app/api/v1/pets/${petId}`, {
         method: 'DELETE'
       });
   
@@ -35,7 +35,6 @@ const App = () => {
         console.log('fail', response.status);
       }
     } catch (error) {
-      // console.error('Error:', error);
       setError(`Request failed - ${error.message}`)
     }
   };
