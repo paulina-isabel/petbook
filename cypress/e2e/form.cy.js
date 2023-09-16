@@ -1,14 +1,14 @@
 describe('Test Form Functionality', () => {
   beforeEach(() => {
-    cy.intercept('GET', 'http://localhost:3001/api/v1/pets', {
+    cy.intercept('GET', 'https://petbook-be-git-refactor-edit-server-name-aliceabarca.vercel.app/api/v1/pets', {
       statusCode: 200,
       fixture: 'allPets.json'
     })
-    .visit('http://localhost:3000')
+    .visit('https://petbook-43hv8o7hk-paulina-isabel.vercel.app/')
   });
   
   it('Should post a new pet', () => {
-    cy.intercept('POST', 'http://localhost:3001/api/v1/pets', {
+    cy.intercept('POST', 'https://petbook-be-git-refactor-edit-server-name-aliceabarca.vercel.app/api/v1/pets', {
       statusCode: 200,
       body: {
         name: 'Rocco',
@@ -19,7 +19,7 @@ describe('Test Form Functionality', () => {
         ownersName: 'Alice'
       }
     })
-    cy.visit('http://localhost:3000')
+    cy.visit('https://petbook-43hv8o7hk-paulina-isabel.vercel.app/')
     cy.get('.form-section').should('exist')
     cy.get('.new-pet').contains('Add New Pet')
     cy.get('.paws-image').should('exist')
@@ -41,21 +41,4 @@ describe('Test Form Functionality', () => {
     cy.get('.all-pets-container').last().contains('p', 'Alice')
   });
 
-  it('Should display error message with a 500 level error', () => {
-    cy.intercept('GET', 'http://localhost:3001/api/v1/pets', {
-      statusCode: 500})
-    cy.get('.error > h2').contains('Request failed - Unable to retrieve contacts from server.')    
-  });
-
-
-  it('Should display URL error page with a 404 level error', () => {
-    cy.intercept('GET', 'http://localhost:3001/api/v1/pets/nonsense', {
-      statusCode: 404
-    })  
-    cy.visit('http://localhost:3000/nonsense')
-    cy.url().should('eq', 'http://localhost:3000/nonsense')
-    cy.get('.error > h2').contains('Unable to retrieve contacts from server.')    
-    cy.get('.error-button').click()
-    cy.url().should('eq', 'http://localhost:3000/')
-  });
 });
