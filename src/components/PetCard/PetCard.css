@@ -69,3 +69,74 @@
 .detail-link-icon {
   height: 70px;
 }
+
+@media screen and (max-width: 1364px) {
+  .pet-card {
+    width: 280px
+  }
+}
+
+@media screen and (max-width: 1287px) {
+  .pet-card {
+    width: 250px
+  }
+}
+
+@media screen and (max-width: 1175px) {
+  .pet-card {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .pet-card {
+    width: 170px;
+    height: 180px
+  }
+  .pet-icon {
+    height: 70px;
+    width: 70px;
+  }
+  .detail-link-icon {
+    height: 40px;
+  }
+  .pet-card h2  {
+    font-size: 20px;
+  }
+  .pet-card p {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 911px) {
+  .spirals {
+    height: 120px;
+  }
+  .pet-card {
+    height: 170px;
+    width: 170px;
+  }
+  .pet-icon {
+    height: 50px;
+    width: 50px;
+  }
+  h2 {
+    font-size: 15px;
+  }
+  .detail-link-icon {
+    height: 25px;
+  }
+  h3 {
+    font-size: 15px;
+  }
+  .pet-card p {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 644px) {
+  .all-pets-container {
+    overflow-x: scroll;
+    width: 80%;
+  }
+}
