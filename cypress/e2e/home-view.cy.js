@@ -18,8 +18,9 @@ describe('Test HomeView', () => {
   })
 
   it.only('should delete pet card', () => {
+    cy.get('.all-pets-container').find('.pet-card').should('have.length', 4)
     cy.get('.all-pets-container > :nth-child(3)')
-      // .should('have.attr', 'alt')
+
   })
 
   it('should display card', () => {
