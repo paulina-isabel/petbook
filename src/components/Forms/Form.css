@@ -89,3 +89,44 @@ p {
   right: 15px;
 }
 
+@media screen and (max-width: 900px) {
+  .form-section {
+    margin-left: 90px;
+    width: 60%;
+    margin-top: 0%;
+    height: 20rem;
+    padding-left: 30px;
+  }
+  .paws-image {
+    width: 250px;
+  }
+  .sec {
+    padding: 5px;
+  }
+  .button {
+    padding: 0px;
+    margin: 0px;
+    font-size: 15px;
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media screen and (max-width: 524px) {
+  .paws-image {
+    width: 0px;
+  }
+}
+
+@media screen and (max-width: 431px) {
+    p {
+      font-size: 20px;
+    }
+
+    .form-section {
+      height: 15rem;
+      overflow-y: scroll;
+      margin-left: 55px;
+    }
+}

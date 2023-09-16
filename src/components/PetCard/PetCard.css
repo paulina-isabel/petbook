@@ -69,3 +69,28 @@
 .detail-link-icon {
   height: 70px;
 }
+
+@media screen and (max-width: 1364px) {
+  .pet-card {
+    width: 280px
+  }
+}
+
+@media screen and (max-width: 1287px) {
+  .pet-card {
+    width: 250px
+  }
+}
+
+@media screen and (max-width: 1175px) {
+  .pet-card {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .all-pets-container {
+    overflow-x: scroll;
+    width: 80%;
+  }
+}

@@ -3,3 +3,11 @@
   background: #fbcb7f;
   height: 100%;
 }
+
+@media screen and (max-width: 899px) {
+  .home-view {
+    display: block;
+    background: #fbcb7f;
+    height: 100%;
+  }
+}
