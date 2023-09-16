@@ -90,13 +90,28 @@ p {
 }
 
 @media screen and (max-width: 900px) {
+  .home-view {
+    display: flex;
+    justify-content: center;
+  }
   .form-section {
-    margin-left: 90px;
     width: 60%;
     margin-top: 0%;
-    height: 20rem;
-    padding-left: 30px;
+    height: 21rem;
+    display: flex;
+    align-items: center;
+    border: solid 15px #72788D;
   }
+  .form-wrapper div:not(.pets-type-checkbox) {
+    display: flex;
+  }
+  .form-wrapper label {
+    width: 10em;
+  }
+  .pets-type-checkbox {
+    margin-left: 6.5rem
+  }
+  
   .paws-image {
     width: 250px;
   }
