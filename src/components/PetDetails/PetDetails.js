@@ -6,7 +6,7 @@ import { checkIcon } from '../../utils';
 import { fetchPetsById } from '../../api-calls';
 import { useEffect, useState } from 'react';
 
-function PetDetails({ setError}) {
+function PetDetails({ setError }) {
   const id = useParams().id;
   const [foundPet, setFoundPet] = useState({})
 
@@ -14,8 +14,12 @@ function PetDetails({ setError}) {
     fetchPetsById(id)
     .then(data => {
       setFoundPet(data)
+      
     })
-    .catch(err => setError(`${err.message}`))
+    .catch(error => {
+      setError(`Request failed - ${error.message}`)
+    })
+    // .catch(err => setError(`${err.message}`))
   }, [id, setError])
   
   return Object.values(foundPet).length > 0 && (
@@ -24,9 +28,9 @@ function PetDetails({ setError}) {
         <Link to={'/'}><button className='back-to-all-pets-button'>Back to All Pets</button></Link>
       </div>
       <section className='details-container'>
-      <div className='spirals-container'>
-        <img className='spirals' src={spirals} alt='spiral styling'/>
-      </div>
+        <div className='spirals-container'>
+          <img className='spirals' src={spirals} alt='spiral styling'/>
+        </div>
         <div className='pet'>
           <div className='pet-image'>{checkIcon(foundPet.type)}</div>
           <h2>{foundPet.name}</h2>
@@ -49,11 +53,11 @@ PetDetails.propTypes = {
   allPets: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-      petName: PropTypes.string.isRequired,
-      petNickname: PropTypes.string,
-      petAge: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-      petFunFact: PropTypes.string,
-      petOwnersName: PropTypes.string.isRequired
+      name: PropTypes.string.isRequired,
+      nickname: PropTypes.string,
+      age: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+      funFact: PropTypes.string,
+      ownersName: PropTypes.string.isRequired
     })
   )
 }
