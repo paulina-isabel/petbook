@@ -22,23 +22,23 @@ const App = () => {
     setAllPets([...allPets, newPet])
   }
 
-  const deletePet = (petId) => {
-    return fetch(`http://localhost:3001/api/v1/pets/${petId}`, {
-      method: 'DELETE'
-    })
-    .then(response => {
+  const deletePet = async (petId) => {
+    try {
+      const response = await fetch(`http://localhost:3001/api/v1/pets/${petId}`, {
+        method: 'DELETE'
+      });
+  
       if (response.ok) {
-        console.log(response, 'this is response in the deletePet')
-        const updatedPets = allPets.filter(pet => pet.id !== petId)
-        setAllPets(updatedPets)
+        const updatedPets = allPets.filter(pet => pet.id !== petId);
+        setAllPets(updatedPets);
       } else {
-        console.log('fail', response.status)
+        console.log('fail', response.status);
       }
-    })
-    .catch(error => setError(error.message))
-  }
-
-  console.log(allPets)
+    } catch (error) {
+      console.error('Error:', error);
+      setError(error.message);
+    }
+  };
 
   useEffect(() => {
     setLoading(true)
