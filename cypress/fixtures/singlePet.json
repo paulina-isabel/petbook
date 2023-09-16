@@ -1,11 +1,9 @@
-
-    
-    {
+{
     "id": 1,
     "name": "Oreo",
     "nickname": "Oreo",
     "age": 2.5,
-    "funFact": "hes had 2 types of tape worms",
+    "funFact": "He's had 2 types of tape worms",
     "ownersName": "Judy",
     "type": "Cat"
     }

@@ -2,7 +2,7 @@ describe('test form', () => {
   beforeEach(() => {
     cy.intercept('GET', 'http://localhost:3001/api/v1/pets', {
       statusCode: 200,
-      fixture: 'example.json'
+      fixture: 'allPets.json'
     })
     .visit('http://localhost:3000')
   })

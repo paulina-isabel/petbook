@@ -3,7 +3,7 @@ describe('Should test single pet details page', () => {
   beforeEach(() => {
     cy.intercept('GET', 'http://localhost:3001/api/v1/pets', {
       statusCode: 200,
-      fixture: "example.json"
+      fixture: "allPets.json"
     })
     cy.visit('http://localhost:3000/')
   })
@@ -27,7 +27,7 @@ describe('Should test single pet details page', () => {
     cy.get('.pet-info')
     cy.get('.pet-info > :nth-child(2)').contains('Nickname: Oreo')
     cy.get('.pet-info > :nth-child(3)').contains('2.5')
-    cy.get('.pet-info > :nth-child(4)').contains('Fun Facts: hes had 2 types of tape worms')
+    cy.get('.pet-info > :nth-child(4)').contains('Fun Facts: He\'s had 2 types of tape worms')
        
   })
 
