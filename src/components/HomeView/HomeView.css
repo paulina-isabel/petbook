@@ -4,9 +4,11 @@
   height: 100%;
 }
 
-@media screen and (max-width: 899px) {
+@media screen and (max-width: 900px) {
   .home-view {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: #fbcb7f;
     height: 100%;
   }
