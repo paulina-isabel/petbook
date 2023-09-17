@@ -4,7 +4,7 @@ describe('Test HomeView', () => {
       statusCode: 200,
       fixture: 'allPets.json'
     })
-    .visit('https://petbook-43hv8o7hk-paulina-isabel.vercel.app/')
+    .visit('https://petbook-flame.vercel.app/')
   });
 
   it('should display header', () => {
@@ -13,7 +13,7 @@ describe('Test HomeView', () => {
       fixture: 'allPets.json'
     })
 
-    cy.visit('https://petbook-43hv8o7hk-paulina-isabel.vercel.app/')
+    cy.visit('https://petbook-flame.vercel.app/')
     cy.get('.petbook-logo')
       .should('have.attr', 'alt')
     cy.get('h1')
@@ -44,10 +44,21 @@ describe('Test HomeView', () => {
       .should('contain', 'Owner: Judy')
   });
 
-  it('should take you to pet details when link is clicked', () => {
-    cy.get(':nth-child(1) > .info-container > a > .detail-link-icon').first().click()
-      .url().should('eq', 'https://petbook-43hv8o7hk-paulina-isabel.vercel.app/1')
-  });
+  it('Should display error message with a 500 level error', () => {
+    cy.intercept('GET', 'https://petbook-be-git-refactor-edit-server-name-aliceabarca.vercel.app/api/v1/pets', {
+      statusCode: 500})
+      cy.get('.error > h2').contains('Request failed - Unable to retrieve contacts from server.')    
+  })
 
+  it('Should display URL error page with a 404 level error', () => {
+   cy.intercept('GET', 'https://petbook-be-git-refactor-edit-server-name-aliceabarca.vercel.app/api/v1/pets/nonsense', {
+     statusCode: 404
+   })
+   cy.visit('https://petbook-flame.vercel.app/nonsense')
+   cy.url().should('eq', 'https://petbook-flame.vercel.app/nonsense')
+   cy.get('.error > h2').contains('Unable to retrieve contacts from server.')
+   cy.get('.error-button').click()
+   cy.url().should('eq', 'https://petbook-flame.vercel.app/')
+ });
 
-});
+})
