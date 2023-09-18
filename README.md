@@ -3,7 +3,7 @@
 # PetBook 
 **Created by [Alice Abarca](https://github.com/aliceabarca)**,
 **[Judy Ye](https://github.com/judy0ye)**, **[Paulina Rubio](https://github.com/paulina-isabel)**, **and [Alex Peterson](https://www.linkedin.com/in/alexandra-peterson-245b65145/)**
-  
+
 </div>
 
 ## 📝 Description
@@ -26,6 +26,10 @@ npm start
 ```
 
 Follow installation instructions for the [backend repo](https://github.com/aliceabarca/petbook-be)
+
+.....OR:
+
+See the deployed project [here](https://petbook-flame.vercel.app/)
 
 
 ## 📚 Learning Goals
